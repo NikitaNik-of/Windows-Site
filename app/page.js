@@ -4,6 +4,7 @@ import WinButton from "./components/WinButton";
 import Window from "./components/Window";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "./components/Link";
 
 function time() {
   var today = new Date;
@@ -30,11 +31,9 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-[#008080]">
-      <motion.div ref={constraintsRef} id="desktop" className="bg-transparent flex flex-1 w-full items-center justify-between">
-        <Window dragConstraints={constraintsRef} isWinFocused={isWinActive(Active, 2)} onTapStart={() => setActive(2)} className=""></Window>
-        <Window dragConstraints={constraintsRef} isWinFocused={isWinActive(Active, 1)} onTapStart={() => setActive(1)} className=""></Window>
+      <motion.div ref={constraintsRef} id="desktop" className="bg-transparent flex w-full h-full items-center">
         <Window dragConstraints={constraintsRef} isWinFocused={isWinActive(Active, 0)} onTapStart={() => setActive(0)} className=""></Window>
-
+        <Link></Link>
       </motion.div>
       <div className="bg-[#c2c2c2] shadow-w98-w w-full flex p-1">
         <WinButton state="default" className="font-bold">Пуск</WinButton>

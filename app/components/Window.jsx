@@ -14,7 +14,7 @@ const Window = ({isWinFocused, className, ...props}) => {
     }
 
     return (
-        <motion.div {...props} drag dragMomentum={false} className={(isWinFocused ? "z-10" : "z-0") + " fixed cursor-pointer " + className}>
+        <motion.div {...props} drag dragMomentum={false} className={(isWinFocused ? "z-10" : "z-0") + " fixed top-96 left-96 cursor-pointer " + className}>
             
             <div className="bg-[#c2c2c2] w-96 h-96 shadow-w98-w">
                 <div className="shadow-w98-b h-full w-full p-[2px] ">
