@@ -2,8 +2,9 @@ import WinButton from "./WinButton";
 import { motion } from "framer-motion";
 import { RxCross1, RxSquare } from "react-icons/rx";
 import { FaRegWindowMinimize  } from "react-icons/fa6";
+import Image from "next/image";
 
-const Window = ({isWinFocused, titleName = "Приложение", className, ...props}) => {
+const Window = ({isWinFocused, img, titleName = "Приложение", className, ...props}) => {
 
     function WindowHead(foc) {
         if (foc) {
@@ -19,6 +20,7 @@ const Window = ({isWinFocused, titleName = "Приложение", className, ..
             <div className="bg-[#c2c2c2] w-96 h-96 shadow-w98-w">
                 <div className="shadow-w98-b h-full w-full p-[2px] ">
                     <div id="Window-Header" className={"h-6 bg-gradient-to-r flex items-center justify-end space-x-[2px] p-1 pr-[2px] " + WindowHead(isWinFocused)}>
+                        <Image src={img} height={20}/>
                         <text className="text-white flex-1">{titleName}</text>
                         <WinButton state="fit" className="text-[14px] text-gray-600  aspect-square"><FaRegWindowMinimize className="h-full m-auto" /></WinButton>
                         <WinButton state="fit" className="text-[14px] text-gray-600  aspect-square"><RxSquare className="h-full m-auto"/></WinButton>

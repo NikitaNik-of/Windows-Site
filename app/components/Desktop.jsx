@@ -4,7 +4,7 @@ import Window from "./Window";
 import { motion } from "framer-motion";
 import Link from "./Link";
 
-const Desktop = () => {
+const Desktop = ({WindowsList, setWindowsList, Active, setActive}) => {
 
     function isWinActive(cur, id) {
         if (cur == id) return true
@@ -22,9 +22,7 @@ const Desktop = () => {
     }
     
     const constraintsRef = useRef(null);
-    const [Active, setActive] = useState(-1)
     const [FocusedIcon, setFocusedIcon] = useState(-1)
-    const [WindowsList, setWindowsList] = useState([[0, "TitleName0"], [1, "TitleName1"]])
 
     return (
         <motion.div
@@ -33,13 +31,14 @@ const Desktop = () => {
         id="desktop"
         className="bg-transparent w-full min-h-full items-center grow relative"
         >
+            {console.log(WindowsList[WindowsList.length - 1][0])}
             <Link dragConstraints={constraintsRef} onClick={() => {mouseClick(0)}} isfocused={FocusedIcon == 0 ? true : false} LinkIcon="About" LinkName="Обо мне" id={0}></Link>
             <Link dragConstraints={constraintsRef} onClick={() => {mouseClick(1)}} isfocused={FocusedIcon == 1 ? true : false} LinkIcon="Links" LinkName="Ссылки" id={1}></Link>
             <Link dragConstraints={constraintsRef} onClick={() => {mouseClick(2)}} isfocused={FocusedIcon == 2 ? true : false} LinkIcon="" LinkName="Globe 2" id={2}></Link>
             <Link dragConstraints={constraintsRef} onClick={() => {mouseClick(3)}} isfocused={FocusedIcon == 3 ? true : false} LinkIcon="" LinkName="Globe 3" id={3}></Link>
 
             {WindowsList.map((wind, i) => (
-                <Window dragConstraints={constraintsRef} key={i} isWinFocused={isWinActive(Active, wind[0])} titleName={wind[1]} onClick={() => setActive(wind[0])} className=""/>
+                <Window dragConstraints={constraintsRef} img={wind[2]}  key={i} isWinFocused={isWinActive(Active, wind[0])} titleName={wind[1]} onClick={() => setActive(wind[0])} className={(wind[4]? "" : "hidden")}/>
             ))}
 
             {/* <Window dragConstraints={constraintsRef} isWinFocused={isWinActive(Active, 0)} onTapStart={() => setActive(0)} className=""></Window>
