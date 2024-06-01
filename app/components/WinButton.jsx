@@ -12,8 +12,8 @@ const WinButton = ( {state = "",  className, children, ...props} ) => {
         case "in":
             return(
             <div className={"bg-[#c2c2c2] shadow-w98-w-in " + className}>
-                <div className="shadow-w98-g-in px-3 py-px w-full h-full">
-                    <div {...props}>{children}</div>
+                <div className="shadow-w98-g-in px-2 py-px w-full h-full">
+                    <div className="flex h-full" {...props}>{children}</div>
                 </div>
             </div>
             )
