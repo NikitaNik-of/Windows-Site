@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,8 +9,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        nns: ['var(--font-NNserif)'],
         inter: ['var(--font-InterFont)'],
+        nns: ['var(--font-NNserif)'],
+        wr: ['var(--font-whiterabbit)']
       },
       boxShadow: {
         'w98-w': '6px 6px 2px -5px rgba(255, 255, 255, 1) inset',
