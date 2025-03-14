@@ -3,8 +3,8 @@ import localFont from 'next/font/local';
 import "./globals.css";
 
 const InterFont = Inter_Tight({
-  subsets: ["latin", "cyrillic", "latin-ext", "cyrillic-ext"],
-      variable: '--font-InterFont'
+    subsets: ["latin", "cyrillic", "latin-ext", "cyrillic-ext"],
+    variable: '--font-InterFont'
   });
 
 const NNserif = localFont({

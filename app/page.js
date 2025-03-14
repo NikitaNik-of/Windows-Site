@@ -44,7 +44,8 @@ export default function Home() {
         </div>
         <WinButton state="in" className="w-24" ><div className="text-sm grow my-auto text-right">
           <Clock
-            format={'hh:mm:ss'}
+
+            format={'HH:mm:ss'}
             style={{ fontSize: '1em' }}
             ticking={true}
             noSsr />
