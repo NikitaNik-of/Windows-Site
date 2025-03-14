@@ -14,6 +14,19 @@ const WinButton = ( {img, state = "",  className, children, onClick, ...props} )
         case "start":
             return(
             <div className={"bg-[#c2c2c2] shadow-w98-w " + className}>
+                <div className="shadow-w98-b w-full h-full flex p-1">
+                    <div className="[writing-mode:vertical-rl] rotate-180 pr-1 pt-1 pb-20 from-blue-950 to-blue-600 bg-gradient-to-t via-blue-950 text-white tracking-wider flex items-end font-inter">
+                        <text className="text-lg font-black">NikitaNik_OS</text>
+                        <text className="text-xl">98</text>
+                    </div>
+                    <div className="flex flex-col justify-end w-48" {...props}>{children}</div>
+                </div>
+            </div>
+            )
+
+        case "startbtn":
+            return(
+            <div className={"bg-[#c2c2c2] shadow-w98-w " + className}>
                 <div className="shadow-w98-b px-3 py-px w-full h-full">
                     <div {...props}>{children}</div>
                 </div>

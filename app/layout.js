@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const InterFont = Inter_Tight({ subsets: ["latin", "cyrillic", "latin-ext", "cyrillic-ext"] });
 
 const NNserif = localFont({
   src: [
@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${NNserif.className}`}>{children}</body>
+      <body className={`${InterFont.className} ${NNserif.className}`}>{children}</body>
     </html>
   );
 }

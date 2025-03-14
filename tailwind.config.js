@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         nns: ['var(--font-NNserif)'],
-        inter: ['var(--font-inter)'],
+        inter: ['var(--font-InterFont)'],
       },
       boxShadow: {
         'w98-w': '6px 6px 2px -5px rgba(255, 255, 255, 1) inset',
