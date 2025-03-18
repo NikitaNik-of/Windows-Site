@@ -1,4 +1,5 @@
 "use client"
+"no cache"
 import { redirect } from 'next/navigation'
 import { useRouter } from 'next/navigation'
  

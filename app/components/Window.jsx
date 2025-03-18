@@ -15,10 +15,10 @@ const Window = ({isWinFocused, img, titleName = "Приложение", classNam
     }
 
     return (
-        <motion.div {...props} drag dragMomentum={false} className={(isWinFocused ? "z-10" : "z-0") + " fixed top-96 left-96 cursor-pointer " + className}>
+        <motion.div {...props} drag dragMomentum={false} className={(isWinFocused ? "z-10" : "z-0") + "  cursor-pointer " + className}>
             
-            <div className="bg-[#c2c2c2] w-96 h-96 shadow-w98-w">
-                <div className="shadow-w98-b h-full w-full p-[2px] ">
+            <div className="bg-[#c2c2c2] w-96 h-96 shadow-w98-def">
+                <div className="h-full w-full p-[2px] ">
                     <div id="Window-Header" className={"h-6 bg-gradient-to-r flex items-center justify-end space-x-[2px] p-1 pr-[2px] " + WindowHead(isWinFocused)}>
                         <Image src={img} height={20}/>
                         <text className="text-white flex-1">{titleName}</text>
