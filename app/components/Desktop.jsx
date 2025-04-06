@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import Window from "./Window";
 import { motion } from "framer-motion";
 import Link from "./Link";
+import WinButton from "./WinButton";
 
 const Desktop = ({WindowsList, setWindowsList, Active, setActive}) => {
     
@@ -39,7 +40,11 @@ const Desktop = ({WindowsList, setWindowsList, Active, setActive}) => {
             <Link dragConstraints={constraintsRef} onDoubleClick={() => router.push("/404")} onClick={() => {mouseClick(3)}} isfocused={FocusedIcon == 3 ? true : false} LinkIcon="" LinkName="Crash System" id={3}></Link>
             <div className="flex justify-center w-full h-full ">
                 {WindowsList.map((wind, i) => (
-                    <Window dragConstraints={constraintsRef} img={wind[2]} key={i} isWinFocused={isWinActive(Active, wind[0])} titleName={wind[1]} onClick={() => setActive(wind[0])} className={(wind[4]? "" : "hidden")}/>
+                    <Window classNameContent="flex items-start grow-0" dragConstraints={constraintsRef} img={wind[2]} key={i} isWinFocused={isWinActive(Active, wind[0])} titleName={wind[1]} onClick={() => setActive(wind[0])} className={(wind[4]? "" : "hidden")}>
+                        <WinButton>Hello</WinButton>
+                        <WinButton>OK</WinButton>
+                        <WinButton>Hello</WinButton>
+                    </Window>
                 ))}
             </div>
 

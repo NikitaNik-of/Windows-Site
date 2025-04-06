@@ -52,7 +52,7 @@ const Login = () => {
             <text>Выбран: {userList[Math.abs(FocusedItem) - 1]}</text>
           </div>
           <div className="flex">
-            <WinButton id="TestToD" onClick={() => {setFocusedD(true); router.push("/")}} state={FocusedD ? "in" : "default"}>To Desktop</WinButton>
+            <WinButton id="TestToD" onClick={() => {router.push("/")}} state="default">To Desktop</WinButton>
           </div>
         </Window>
       </motion.div>
