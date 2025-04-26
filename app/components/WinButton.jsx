@@ -9,7 +9,7 @@ const WinButton = ( {img, state = "default", className, children, onClick, onMou
             return(
             <div onClick={onClick} className={"min-w-[75px] min-h-[23px] focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу text-center active:shadow-w98-pressed bg-[#c2c2c2] shadow-w98-def " + className}>
                 <div className="px-4 py-1 w-full h-full">
-                    <div {...props}>{children}</div>
+                    <text className="text-transparent text-shadow-[0_0_#222] active:text-shadow-[1px_1px_#222]" {...props}>{children}</text>
                 </div>
             </div>
             )
@@ -18,7 +18,7 @@ const WinButton = ( {img, state = "default", className, children, onClick, onMou
             return(
             <div onClickCapture={onClick} className={"bg-[#c2c2c2] shadow-w98-def " + className}>
                 <div className="w-full h-full flex p-1">
-                    <div className="[writing-mode:vertical-lr] rotate-180 pr-1 pt-1 from-blue-950 to-blue-600 bg-gradient-to-t via-blue-950 text-white tracking-wider font-inter">
+                    <div className="[writing-mode:vertical-lr] rotate-180 pr-1 pt-1 from-blue-950 to-blue-600 bg-linear-to-t via-blue-950 text-white tracking-wider font-inter">
                         <text className="text-lg font-black">NikitaNik_os</text>
                         <text className="text-xl font-light">98</text>
                     </div>

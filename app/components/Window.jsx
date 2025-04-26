@@ -19,7 +19,7 @@ const Window = ({isWinFocused, img, onClick, titleName = "Приложение",
             
             <div className="bg-[#c2c2c2] w-96 h-96 shadow-w98-def">
                 <div className="h-full w-full p-[2px] flex flex-col justify-between ">
-                    <div id="Window-Header" className={"h-6 bg-gradient-to-r flex items-center justify-end space-x-[2px] p-1 pr-[2px] " + WindowHead(isWinFocused)}>
+                    <div id="Window-Header" className={"h-6 bg-linear-to-r flex items-center justify-end space-x-[2px] p-1 pr-[2px] " + WindowHead(isWinFocused)}>
                         <Image src={img} height={20}/>
                         <text className="text-white flex-1">{titleName}</text>
                         <div className="flex">
