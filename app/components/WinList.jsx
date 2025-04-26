@@ -19,7 +19,7 @@ const WinList = ({ className, children, list, focusedItem, setFocusedItem, ...pr
         >
           {list.map((item, i) => (
             <div
-              id={i + 1}
+              key={i + 1}
               onClickCapture={() => {
                 setFocusedItem(i + 1);
               }}

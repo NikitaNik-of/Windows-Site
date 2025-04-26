@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 /* :root {
   --foreground-rgb: 0, 0, 0;
@@ -31,3 +29,47 @@ body {
     text-wrap: balance;
   }
 } */
+
+@theme {
+  --font-inter: var(--font-InterFont);
+  --font-nns: var(--font-NNserif);
+  --font-wr: var(--font-whiterabbit);
+
+  --shadow-w98-w: 1px 1px 0px 0px rgba(255, 255, 255, 1) inset;
+  --shadow-w98-b: -1px -1px 0px 0px rgba(0, 0, 0, 0.9) inset;
+  --shadow-w98-w-sm: 1px 1px 0px 0px rgba(255, 255, 255, 1) inset;
+  --shadow-w98-b-sm: -1px -1px 0px 0px rgba(0, 0, 0, 0.9) inset;
+  --shadow-w98-w-in: -1px -1px 0px 0px rgba(255, 255, 255, 1) inset;
+  --shadow-w98-g-in: 1px 1px 0px 0px rgba(135, 135, 135, 0.9) inset;
+  --shadow-w98-b-in: 1px 1px 0px 0px rgba(0, 0, 0, 0.9) inset;
+  --shadow-w98-def:
+    -1px -1px 0px 0px #404040 inset, 1px 1px 0px 0px #ffffff inset,
+    -2px -2px 0px 0px #808080 inset, 2px 2px 0px 0px #eceae7 inset;
+  --shadow-w98-pressed:
+    -1px -1px 0px 0px #ffffff inset, 1px 1px 0px 0px #404040 inset,
+    -2px -2px 0px 0px #eceae7 inset, 2px 2px 0px 0px #808080 inset;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
