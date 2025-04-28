@@ -14,7 +14,7 @@ const Login = () => {
   }
 
   function emptyClick() {
-    console.log(FocusedItem)
+    // console.log(FocusedItem)
     setActive(-1);
     FocusedItem > 0 && setFocusedItem(-1 * FocusedItem);
     setFocusedList(-1);

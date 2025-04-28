@@ -5,6 +5,7 @@ import { useState } from "react";
 import Desktop from "./../components/Desktop";
 import dirIm from "./../public/dir.png";
 import dirIm_sm from "./../public/dir_sm.png";
+import ToolsGear from "./../public/tools_gear-0.png";
 import Clock from "react-live-clock";
 import { IoMdArrowDropright } from "react-icons/io";
 
@@ -79,8 +80,13 @@ export default function Home() {
             </WinButton>
           ))}
         </div>
-        <WinButton state="in" className="w-24">
-          <div className="text-sm grow my-auto text-right">
+
+        <WinButton state="in" className="w-auto space-x-0.5">
+          <Image alt="" className="" title="Bitch" src={ToolsGear} height={20}/>
+          <Image alt="2" src={ToolsGear} height={20}/>
+          <Image alt="3" src={ToolsGear} height={20}/>
+          <Image alt="balls" src={ToolsGear} height={20}/>
+          <div className="ml-2 w-14 text-sm grow my-auto text-center">
             <Clock format={"HH:mm:ss"} style={{ fontSize: "1em" }} ticking={true} noSsr />
           </div>
         </WinButton>
