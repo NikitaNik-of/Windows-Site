@@ -22,6 +22,21 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
     setFocusedIcon(id);
   }
 
+  function CloseWin(id) {
+    var copyList = [...WindowsList]
+    copyList[id][4] = false
+    setWindowsList(copyList)    
+  }
+
+  function OpenWin(id) {
+    var copyList = [...WindowsList]
+    copyList[id][4] = true
+    if (WindowsList[id][4]) {
+        setActive(id)
+    }
+    setWindowsList(copyList)    
+  }
+
   const constraintsRef = useRef(null);
   const [FocusedIcon, setFocusedIcon] = useState(-1);
   const router = useRouter();
@@ -40,6 +55,9 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
         onClick={() => {
           mouseClick(0);
         }}
+        onDoubleClick={() => {
+            OpenWin(0);
+        }}
         isfocused={FocusedIcon == 0 ? true : false}
         LinkIcon="About"
         LinkName="Обо мне"
@@ -50,6 +68,9 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
         dragConstraints={constraintsRef}
         onClick={() => {
           mouseClick(1);
+        }}
+        onDoubleClick={() => {
+            OpenWin(1);
         }}
         isfocused={FocusedIcon == 1 ? true : false}
         LinkIcon="Links"
@@ -84,6 +105,7 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
       <div className="flex justify-center w-full h-full ">
         {WindowsList.map((wind, i) => (
           <Window
+            closeFunc={Desktop.CloseWin}
             classNameContent="flex items-start grow-0 p-1"
             dragConstraints={constraintsRef}
             img={wind[2]}
@@ -93,7 +115,7 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
             onClick={() => setActive(wind[0])}
             className={wind[4] ? "" : "hidden"}
           >
-            <WinButton>Hello</WinButton>
+            <WinButton onClick={() => {CloseWin(i)}}>Hello</WinButton>
             <WinButton>OK</WinButton>
             <WinButton>Hello</WinButton>
           </Window>

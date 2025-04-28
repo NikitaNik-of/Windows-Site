@@ -11,8 +11,8 @@ import { IoMdArrowDropright } from "react-icons/io";
 
 export default function Home() {
   const [WindowsList, setWindowsList] = useState([
-    [0, "TitleName0", dirIm, dirIm_sm, true],
-    [1, "TitleName1", dirIm, dirIm_sm, false],
+    [0, "Обо мне", dirIm, dirIm_sm, true],
+    [1, "Ссылки", dirIm, dirIm_sm, false],
     [2, "TitleName2", dirIm, dirIm_sm, true],
   ]);
   const [Active, setActive] = useState(0);

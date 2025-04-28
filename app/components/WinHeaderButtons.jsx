@@ -2,21 +2,36 @@ import React from "react";
 import { RxCross1, RxSquare } from "react-icons/rx";
 import { FaRegWindowMinimize  } from "react-icons/fa6";
 import WinButton from "./WinButton";
+import Desktop from "./Desktop";
 
-const WinHeaderButtons = () => {
+const WinHeaderButtons = ({closeFunc, key, type = "def", exit = true}) => {
   return (
-    <div className="flex space-x-0.5">
+    <div className="flex text-center space-x-0.5">
+      {type == "def" ? 
       <div className="flex">
-        <WinButton state="fit" className="text-[14px] text-gray-600  aspect-square">
-          <FaRegWindowMinimize className="h-full m-auto" />
+        <WinButton state="WindowTop" className="text-[14px] aspect-square ">
+         –
         </WinButton>
-        <WinButton state="fit" className="text-[14px] text-gray-600  aspect-square">
-          <RxSquare className="h-full m-auto" />
+        <WinButton state="WindowTop" className="text-[14px] aspect-square ">
+          O
         </WinButton>
       </div>
-      <WinButton state="fit" className="text-[14px] text-gray-600  aspect-square">
-        <RxCross1 className="h-full m-auto" />
+      : null}
+      {type == "disabled" ? 
+      <div className="flex">
+        <WinButton state="WindowTopDis" className="text-[14px] aspect-square ">
+          –
+        </WinButton>
+        <WinButton state="WindowTopDis" className="text-[14px] aspect-square ">
+          O
+        </WinButton>
+      </div>
+      : null}
+      {exit ? 
+      <WinButton onClick={Desktop.CloseWin(key)} state="WindowTop" className="text-[14px] aspect-square ">
+        X
       </WinButton>
+      : null}
     </div>
   );
 };
