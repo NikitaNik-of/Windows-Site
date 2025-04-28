@@ -43,9 +43,7 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
 
   return (
     <motion.div
-      onClickCapture={() => {
-        emptyClick();
-      }}
+
       ref={constraintsRef}
       id="desktop"
       className="bg-transparent w-full min-h-full grow items-center"
@@ -105,15 +103,14 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
       <div className="flex justify-center w-full h-full ">
         {WindowsList.map((wind, i) => (
           <Window
-            closeFunc={Desktop.CloseWin}
             classNameContent="flex items-start grow-0 p-1"
             dragConstraints={constraintsRef}
             img={wind[2]}
             key={i}
             isWinFocused={isWinActive(Active, wind[0])}
             titleName={wind[1]}
-            onClick={() => setActive(wind[0])}
-            className={wind[4] ? "" : "hidden"}
+            onClick={() => {setActive(wind[0])}}
+            className={wind[4] ? " absolute " : "  hidden"}
           >
             <WinButton onClick={() => {CloseWin(i)}}>Hello</WinButton>
             <WinButton>OK</WinButton>

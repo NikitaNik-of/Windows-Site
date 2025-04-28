@@ -87,7 +87,7 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
       return (
         <div onClick={onClick} className={"bg-[#e6e6e6] shadow-w98-pressed cursor-default " + className}>
           <div className="px-2 py-px w-full h-full flex items-center">
-            <Image src={img} height={16} className="mr-1" />
+            <Image src={img} alt="" height={16} className="mr-1" />
             <div {...props}>{children}</div>
           </div>
         </div>

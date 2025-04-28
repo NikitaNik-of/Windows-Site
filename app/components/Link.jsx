@@ -34,7 +34,7 @@ const Link = ({LinkIcon = "", onDoubleClick, isfocused=false, LinkName = "", id,
     return (
         <motion.div {...props} drag dragMomentum={false} onDoubleClick={onDoubleClick} className={clN + " fixed aspect-square h-16 left-[5px] flex flex-col items-center text-center text-[12px] " + initPos(id)}>
             <div className={(isfocused ? " ": "") + " "}><Image src={IconChooser()} alt="" quality={100} className={(isfocused ? "opacity-90 ": "") + " p-1 pointer-events-none h-12 w-12"}/></div>
-            <text className={(isfocused ? "bg-blue-900 -py-1 px-1" : "") + " text-white font-extralight"}>{LinkName}</text>
+            <span className={(isfocused ? "bg-blue-900 -py-1 px-1" : "") + " text-white font-extralight"}>{LinkName}</span>
             <Image src={Overlay} alt="" quality={100} className="p-1 fixed pointer-events-none"/>
         </motion.div>
     );

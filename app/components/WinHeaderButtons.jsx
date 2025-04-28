@@ -2,9 +2,8 @@ import React from "react";
 import { RxCross1, RxSquare } from "react-icons/rx";
 import { FaRegWindowMinimize  } from "react-icons/fa6";
 import WinButton from "./WinButton";
-import Desktop from "./Desktop";
 
-const WinHeaderButtons = ({closeFunc, key, type = "def", exit = true}) => {
+const WinHeaderButtons = ({type = "def", exit = true}) => {
   return (
     <div className="flex text-center space-x-0.5">
       {type == "def" ? 
@@ -28,7 +27,7 @@ const WinHeaderButtons = ({closeFunc, key, type = "def", exit = true}) => {
       </div>
       : null}
       {exit ? 
-      <WinButton onClick={Desktop.CloseWin(key)} state="WindowTop" className="text-[14px] aspect-square ">
+      <WinButton state="WindowTop" className="text-[14px] aspect-square ">
         X
       </WinButton>
       : null}

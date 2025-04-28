@@ -34,28 +34,28 @@ export default function Home() {
           <WinButton state="start" onClick={() => setStartActive(1)} className="absolute bg-[#c2c2c2] bottom-[34px] left-0 flex cursor-default">
             <div className="py-2 px-3 flex items-center hover:bg-blue-900 hover:text-white justify-between gap-2">
               <Image className="shrink-0" height={22} src={dirIm} alt="" />
-              <text className="grow">Ебучий Folder</text>
+              <span className="grow">Ебучий Folder</span>
               <IoMdArrowDropright className="shrink-0 my-auto" />
             </div>
             <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
               <Image className="mr-2" height={22} src={dirIm} alt="" />
-              <text>Menu Option</text>
+              <span>Menu Option</span>
             </div>
             <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
               <Image className="mr-2" height={22} src={dirIm} alt="" />
-              <text>Menu Option</text>
+              <span>Menu Option</span>
             </div>
             <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
               <Image className="mr-2" height={22} src={dirIm} alt="" />
-              <text>Menu Option</text>
+              <span>Menu Option</span>
             </div>
             <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
               <Image className="mr-2" height={22} src={dirIm} alt="" />
-              <text>Menu Option</text>
+              <span>Menu Option</span>
             </div>
             <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
               <Image className="mr-2" height={22} src={dirIm} alt="" />
-              <text>Menu Option</text>
+              <span>Menu Option</span>
             </div>
             <div className="px-1">
               <div className="h-px bg-neutral-500"></div>
@@ -63,11 +63,11 @@ export default function Home() {
             </div>
             <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
               <Image className="mr-2" height={22} src={dirIm} alt="" />
-              <text>Кнопка нахуй</text>
+              <span>Кнопка нахуй</span>
             </div>
             <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
               <Image className="mr-2" height={22} src={dirIm} alt="" />
-              <text className="">Жоповая кнопка</text>
+              <span className="">Жоповая кнопка</span>
             </div>
           </WinButton>
         )}
