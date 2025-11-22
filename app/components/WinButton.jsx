@@ -42,8 +42,8 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
 
     case "start":
       return (
-        <div onClickCapture={onClick} className={"bg-[#c2c2c2] shadow-w98-def " + className}>
-          <div className="w-full h-full flex p-1">
+        <div onClickCapture={onClick} className={" " + className}>
+          <div className="w-full h-full flex py-0.5 pl-0.5">
             <div className="[writing-mode:vertical-lr] rotate-180 pr-1 pt-1 from-blue-950 to-blue-600 bg-linear-to-t via-blue-950 text-white tracking-wider font-inter">
               <text className="text-lg font-black">NikitaNik_os</text>
               <text className="text-xl font-light">98</text>

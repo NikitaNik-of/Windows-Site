@@ -46,12 +46,13 @@ const Login = () => {
       >
         <Window
           dragConstraints={constraintsRef}
-          img={NaN}
+          img={""}
           key={0}
           isWinFocused={isWinActive(Active, 0)}
           titleName={"Добро пожаловать в NikitaNik_OS 98"}
           onClickCapture={() => setActive(0)}
           classNameContent={"flex-col p-4 flex justify-between"}
+          navButtons = {[0, 0, 0]}
         >
           <div className=" space-y-1">
             <text>Выберите пользователя системы:</text>

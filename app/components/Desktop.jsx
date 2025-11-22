@@ -13,7 +13,7 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
   }
 
   function emptyClick() {
-    console.log("huh", Active);
+    // console.log("huh", Active);
     setFocusedIcon(-1);
     setActive(-1);
   }
@@ -43,7 +43,7 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
 
   return (
     <motion.div
-
+      onClickCapture={emptyClick}
       ref={constraintsRef}
       id="desktop"
       className="bg-transparent w-full min-h-full grow items-center"
@@ -103,18 +103,20 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
       <div className="flex justify-center w-full h-full ">
         {WindowsList.map((wind, i) => (
           <Window
-            classNameContent="flex items-start grow-0 p-1"
+            classNameContent="flex items-start grow-0 p-1 space-x-2"
             dragConstraints={constraintsRef}
+            winID = {wind[0]}
             img={wind[2]}
             key={i}
             isWinFocused={isWinActive(Active, wind[0])}
             titleName={wind[1]}
             onClick={() => {setActive(wind[0])}}
             className={wind[4] ? " absolute " : "  hidden"}
+            closeWin={CloseWin}
           >
-            <WinButton onClick={() => {CloseWin(i)}}>Hello</WinButton>
+            <WinButton onClick={() => {CloseWin(wind[0])}}>Hello</WinButton>
             <WinButton>OK</WinButton>
-            <WinButton>Hello</WinButton>
+            <WinButton state="disabled">Hello</WinButton>
           </Window>
         ))}
       </div>

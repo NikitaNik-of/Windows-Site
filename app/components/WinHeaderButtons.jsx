@@ -3,10 +3,10 @@ import { RxCross1, RxSquare } from "react-icons/rx";
 import { FaRegWindowMinimize  } from "react-icons/fa6";
 import WinButton from "./WinButton";
 
-const WinHeaderButtons = ({type = "def", exit = true}) => {
+const WinHeaderButtons = ({navButtons, closeWin, winID}) => {
   return (
     <div className="flex text-center space-x-0.5">
-      {type == "def" ? 
+      {(navButtons[0] == 2) ? 
       <div className="flex">
         <WinButton state="WindowTop" className="text-[14px] aspect-square ">
          –
@@ -16,7 +16,7 @@ const WinHeaderButtons = ({type = "def", exit = true}) => {
         </WinButton>
       </div>
       : null}
-      {type == "disabled" ? 
+      {(navButtons[0] == 1) ? 
       <div className="flex">
         <WinButton state="WindowTopDis" className="text-[14px] aspect-square ">
           –
@@ -26,8 +26,8 @@ const WinHeaderButtons = ({type = "def", exit = true}) => {
         </WinButton>
       </div>
       : null}
-      {exit ? 
-      <WinButton state="WindowTop" className="text-[14px] aspect-square ">
+      {(navButtons[2] == 2) ? 
+      <WinButton onClick={() => {closeWin(winID)}} state="WindowTop" className="text-[14px] aspect-square ">
         X
       </WinButton>
       : null}
