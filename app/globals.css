@@ -48,6 +48,9 @@ body {
   --shadow-w98-pressed:
     -1px -1px 0px 0px #ffffff inset, 1px 1px 0px 0px #404040 inset,
     -2px -2px 0px 0px #eceae7 inset, 2px 2px 0px 0px #808080 inset;
+  --shadow-w98-tabdef:
+    -1px 0px 0px 0px #404040 inset, 1px 1px 0px 0px #ffffff inset,
+    -2px 0px 0px 0px #808080 inset, 2px 2px 0px 0px #eceae7 inset;
 
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
   --background-image-gradient-conic: conic-gradient(

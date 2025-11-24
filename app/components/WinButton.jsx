@@ -142,6 +142,39 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
         </div>
     );
 
+    case "tab":
+      return (
+        <div
+          onClick={onClick}
+          className={
+            "min-w-[75px] min-h-[23px] text-center bg-[#c2c2c2] shadow-w98-tabdef mb-0.5"
+            + " focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " + className
+          }
+        >
+          <div className="px-4 py-1 w-full h-full">
+            <text className="" {...props}>
+              {children}
+            </text>
+          </div>
+        </div>
+      );
+
+    case "tabSel":
+      return (
+        <div
+          onClick={onClick}
+          className={
+            "min-w-[75px] min-h-[23px] text-center bg-[#c2c2c2] shadow-w98-tabdef -mt-0.5 pt-0.5"
+            + " focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " + className
+          }
+        >
+          <div className="px-4 py-1 w-full h-full">
+            <text className="" {...props}>
+              {children}
+            </text>
+          </div>
+        </div>
+      );
     default:
       return <div>{children}</div>;
   }

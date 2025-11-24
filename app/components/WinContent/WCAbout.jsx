@@ -1,4 +1,5 @@
 import React from 'react'
+import Tabs from '../Tabs'
 
 const WCAbout = () => {
   return (
@@ -8,7 +9,7 @@ const WCAbout = () => {
             <div className='inline font-mono'> NikitaNik_of</div>
         </p>
         <p>
-            Вот тут будет какой-то крутой текст
+            <Tabs/>
         </p>
     </div>
   )
