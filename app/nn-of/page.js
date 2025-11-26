@@ -11,9 +11,9 @@ import { IoMdArrowDropright } from "react-icons/io";
 
 export default function Home() {
   const [WindowsList, setWindowsList] = useState([
-    [0, "Обо мне", dirIm, dirIm_sm, true, "top-32 right-16"],
-    [1, "Ссылки", dirIm, dirIm_sm, false, ""],
-    [2, "TitleName2", dirIm, dirIm_sm, true, ""],
+    [0, "Обо мне", dirIm, dirIm_sm, true, "-translate-x-[250px] translate-y-[70px]"],
+    [1, "Ссылки", dirIm, dirIm_sm, true, "translate-x-[300px] translate-y-[150px]"],
+    [2, "TitleName2", dirIm, dirIm_sm, false, "-translate-x-1/2 translate-y-1/2"],
   ]);
   const [Active, setActive] = useState(0);
   const [startActive, setStartActive] = useState(0);
@@ -78,7 +78,7 @@ export default function Home() {
         <div className="w-[2px] mx-1 bg-[#999999]" />
         <div className="flex-1 flex space-x-1">
           {WindowsList.map((wind, i) => (
-            <WinButton key={i} img={wind[3]} state={Active == i ? "barIn" : "bar"} onClick={() => setActive(wind[0])} className={(wind[4] ? "" : "hidden ") + " w-52"}>
+            <WinButton key={i} img={wind[3]} state={Active == i ? "barIn" : "bar"} onClick={() => setActive(wind[0])} className={(wind[4] ? " " : "hidden ") + " w-52"}>
               {wind[1]}
             </WinButton>
           ))}

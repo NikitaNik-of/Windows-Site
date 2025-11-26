@@ -148,7 +148,8 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
           onClick={onClick}
           className={
             "min-w-[75px] min-h-[23px] text-center bg-[#c2c2c2] shadow-w98-tabdef mb-0.5"
-            + " focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " + className
+            + " focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " + className +
+            " text-transparent text-shadow-[0_0_#222] active:text-shadow-[1px_1px_#222] "
           }
         >
           <div className="px-4 py-1 w-full h-full">
@@ -165,7 +166,8 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
           onClick={onClick}
           className={
             "min-w-[75px] min-h-[23px] text-center bg-[#c2c2c2] shadow-w98-tabdef -mt-0.5 pt-0.5"
-            + " focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " + className
+            + " focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " + className +
+            " text-transparent text-shadow-[0_0_#222] active:text-shadow-[1px_1px_#222] "
           }
         >
           <div className="px-4 py-1 w-full h-full">

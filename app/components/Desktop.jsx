@@ -46,7 +46,7 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
       onClickCapture={emptyClick}
       ref={constraintsRef}
       id="desktop"
-      className="bg-transparent w-full min-h-full grow items-center"
+      className="flex flex-col bg-transparent w-full min-h-full grow items-center"
     >
       <Link
         dragConstraints={constraintsRef}
@@ -100,7 +100,7 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
         id={3}
       ></Link>
 
-      <div className="flex justify-center w-full h-full ">
+      <div className="grow flex justify-center w-full min-h-full ">
         {WindowsList.map((wind, i) => (
           <Window
             classNameContent="flex items-start grow-0 p-1 space-x-2"
@@ -111,7 +111,7 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
             isWinFocused={isWinActive(Active, wind[0])}
             titleName={wind[1]}
             onClick={() => {setActive(wind[0])}}
-            className={wind[4] ? " absolute " : "  hidden"}
+            className={wind[4] ? (" absolute " + wind[5]) : "  hidden"}
             closeWin={CloseWin}
           >
             <WinButton onClick={() => {CloseWin(wind[0])}}>Hello</WinButton>

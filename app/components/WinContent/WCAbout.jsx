@@ -9,7 +9,7 @@ const WCAbout = () => {
             <div className='inline font-mono'> NikitaNik_of</div>
         </p>
         <p>
-            <Tabs/>
+            <Tabs className="h-32"/>
         </p>
     </div>
   )
