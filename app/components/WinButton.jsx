@@ -42,8 +42,8 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
 
     case "start":
       return (
-        <div onClickCapture={onClick} className={"bg-[#c2c2c2] shadow-w98-def " + className}>
-          <div className="w-full h-full flex p-1">
+        <div onClickCapture={onClick} className={" " + className}>
+          <div className="w-full h-full flex py-0.5 pl-0.5">
             <div className="[writing-mode:vertical-lr] rotate-180 pr-1 pt-1 from-blue-950 to-blue-600 bg-linear-to-t via-blue-950 text-white tracking-wider font-inter">
               <text className="text-lg font-black">NikitaNik_os</text>
               <text className="text-xl font-light">98</text>
@@ -142,6 +142,41 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
         </div>
     );
 
+    case "tab":
+      return (
+        <div
+          onClick={onClick}
+          className={
+            "min-w-[75px] min-h-[23px] text-center bg-[#c2c2c2] shadow-w98-tabdef mb-0.5"
+            + " focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " + className +
+            " text-transparent text-shadow-[0_0_#222] active:text-shadow-[1px_1px_#222] "
+          }
+        >
+          <div className="px-4 py-1 w-full h-full">
+            <text className="" {...props}>
+              {children}
+            </text>
+          </div>
+        </div>
+      );
+
+    case "tabSel":
+      return (
+        <div
+          onClick={onClick}
+          className={
+            "min-w-[75px] min-h-[23px] text-center bg-[#c2c2c2] shadow-w98-tabdef -mt-0.5 pt-0.5"
+            + " focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " + className +
+            " text-transparent text-shadow-[0_0_#222] active:text-shadow-[1px_1px_#222] "
+          }
+        >
+          <div className="px-4 py-1 w-full h-full">
+            <text className="" {...props}>
+              {children}
+            </text>
+          </div>
+        </div>
+      );
     default:
       return <div>{children}</div>;
   }
