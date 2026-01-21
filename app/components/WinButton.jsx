@@ -16,9 +16,9 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
           }
         >
           <div className="px-4 py-1 w-full h-full">
-            <text className="" {...props}>
+            <p className="" {...props}>
               {children}
-            </text>
+            </p>
           </div>
         </div>
       );
@@ -33,9 +33,9 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
           }
         >
           <div className="px-4 py-1 w-full h-full">
-            <text className="text-[#888] text-shadow-[1px_1px_#fff]" {...props}>
+            <div className="text-[#888] text-shadow-[1px_1px_#fff]" {...props}>
               {children}
-            </text>
+            </div>
           </div>
         </div>
       );
@@ -77,7 +77,7 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
       return (
         <div onClick={onClick} className={"active:shadow-w98-pressed active:pt-[2px] active:pl-[2px] bg-[#c2c2c2] shadow-w98-def cursor-pointer " + className}>
           <div className="px-2 py-px w-full h-full flex items-center">
-            <Image src={img} height={16} className="mr-1" />
+            <Image alt="" src={img} height={16} className="mr-1" />
             <div {...props}>{children}</div>
           </div>
         </div>

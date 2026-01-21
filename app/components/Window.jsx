@@ -19,7 +19,7 @@ const Window = ({isWinFocused, img, onClick, titleName = "Приложение",
             <div className="bg-[#c2c2c2] w-96 h-96 shadow-w98-def">
                 <div className="h-full w-full p-[2px]">
                     <div id="Window-Header" className={"h-6 bg-linear-to-r flex items-center justify-end space-x-1 p-0.5 pl-1 mr-[1px] " + WindowHead(isWinFocused)}>
-                        <Image src={img} alt="" height={20}/>
+                        {img != null ? <Image src={img} alt="" height={20}/> : null}
                         <span className="text-white flex-1">{titleName}</span>
                         <WinHeaderButtons/>
                     </div>

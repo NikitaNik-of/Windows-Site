@@ -54,9 +54,9 @@ const Login = () => {
           classNameContent={"flex-col p-4 flex justify-between"}
         >
           <div className=" space-y-1">
-            <text>Выберите пользователя системы:</text>
+            <div>Выберите пользователя системы:</div>
             <WinList className="h-20" list={userList} focusedItem={FocusedItem} setFocusedItem={setFocusedItem}/>
-            <text>Выбран: {userList[Math.abs(FocusedItem) - 1]}, {FocusedItem}</text>
+            <div>Выбран: {userList[Math.abs(FocusedItem) - 1]}, {FocusedItem}</div>
           </div>
           <div className="flex justify-end">
             <WinButton id="TestToD" onClick={() => {FocusedItem == 0 ? null : goTo(setFocusedD, userList, FocusedItem)}} state={FocusedItem == 0 ? "disabled" : "default"}>Войти</WinButton>
