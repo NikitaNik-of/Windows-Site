@@ -47,7 +47,7 @@ export default function Home() {
           Пуск
         </WinButton>
         {startActive == 1 && (
-          <div onClickCapture={() => setStartActive(1)} className="absolute bg-[#c2c2c2] bottom-[34px] left-0 flex cursor-default shadow-w98-def">
+          <div onClickCapture={() => setStartActive(1)} className="absolute bg-[#c2c2c2] bottom-8.5 left-0 flex cursor-default shadow-w98-def">
             <WinButton state="start"/>
             <div className="py-0.5 pr-0.5">
               <div className="py-2 px-3 flex items-center hover:bg-blue-900 hover:text-white justify-between gap-2">
@@ -91,7 +91,7 @@ export default function Home() {
           </div>
         )}
 
-        <div className="w-[2px] mx-1 bg-[#999999]" />
+        <div className="w-0.5 mx-1 bg-[#999999]" />
         <div className="flex-1 flex space-x-1">
           {WindowsList.map((wind, i) => (
             <WinButton key={i} img={wind[3]} state={Active == i ? "barIn" : "bar"} onClick={() => setActive(wind[0])} className={(wind[4] ? " " : "hidden ") + " w-52"}>
