@@ -16,9 +16,9 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
           }
         >
           <div className="px-4 py-1 w-full h-full">
-            <p className="" {...props}>
+            <div className="" {...props}>
               {children}
-            </p>
+            </div>
           </div>
         </div>
       );
@@ -171,9 +171,9 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
           }
         >
           <div className="px-4 py-1 w-full h-full">
-            <text className="" {...props}>
+            <div className="" {...props}>
               {children}
-            </text>
+            </div>
           </div>
         </div>
       );

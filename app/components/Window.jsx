@@ -16,7 +16,6 @@ const Window = ({ closeWin, isWinFocused, img, onClick, titleName = "Прило�
   return (
     <motion.div
       {...props}
-      closeWin={closeWin}
       drag
       dragControls={dragControls}
       dragListener={false}
@@ -38,7 +37,7 @@ const Window = ({ closeWin, isWinFocused, img, onClick, titleName = "Прило�
             <span className="text-white flex-1">{titleName}</span>
             <WinHeaderButtons navButtons={navButtons} closeWin={closeWin} winID={winID} />
           </div>
-          <div className={classNameContent + " grow"} draggable={false}>
+          <div className={classNameContent + " grow text-sm"} draggable={false}>
             {winID == 0 ? <WCAbout /> : winID == 1 ? <Links /> : children}
           </div>
         </div>

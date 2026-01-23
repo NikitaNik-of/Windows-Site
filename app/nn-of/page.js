@@ -3,17 +3,33 @@ import WinButton from "./../components/WinButton";
 import Image from "next/image";
 import { useState } from "react";
 import Desktop from "./../components/Desktop";
-import dirIm from "./../public/dir.png";
-import dirIm_sm from "./../public/dir_sm.png";
-import ToolsGear from "./../public/tools_gear-0.png";
 import Clock from "react-live-clock";
 import { IoMdArrowDropright } from "react-icons/io";
 
+// images windows
+import dirIm from "./../public/dir_md.png";
+import dirIm_sm from "./../public/dir_sm.png";
+import ToolsGear from "./../public/tools_gear-0.png";
+import globeBook from "./../public/globe_book.png";
+import User from "./../public/user.png";
+
+// images links
+import Shell from "./../public/shell.png"
+import keys from "./../public/keys_sm.png";
+import link from "./../public/link_book.png";
+// import user from "./../public/user.png";
+
 export default function Home() {
   const [WindowsList, setWindowsList] = useState([
-    [0, "Обо мне", dirIm, dirIm_sm, true, "-translate-x-[250px] translate-y-[70px]"],
-    [1, "Ссылки", dirIm, dirIm_sm, true, "translate-x-[300px] translate-y-[150px]"],
+    [0, "Обо мне", User, User, true, "-translate-x-[250px] translate-y-[70px]"],
+    [1, "Ссылки", globeBook, link, true, "translate-x-[300px] translate-y-[150px]"],
     [2, "TitleName2", dirIm, dirIm_sm, false, "-translate-x-1/2 translate-y-1/2"],
+  ]);
+  const [linkList, setLinkList] = useState([
+    [0, "Обо мне", User, "win", 0],
+    [1, "Ссылки", link, "win", 1],
+    [2, "Login Screen", keys, "page", ""],
+    [3, "Crash System", Shell, "page", "404"],
   ]);
   const [Active, setActive] = useState(0);
   const [startActive, setStartActive] = useState(0);
@@ -25,7 +41,7 @@ export default function Home() {
         setStartActive(0);
       }}
     >
-      <Desktop WindowsList={WindowsList} setWindowsList={setWindowsList} Active={Active} setActive={setActive} />
+      <Desktop WindowsList={WindowsList} setWindowsList={setWindowsList} linkList={linkList} Active={Active} setActive={setActive} />
       <div className="bg-[#c2c2c2] shadow-w98-w w-full flex p-1 z-50 relative">
         <WinButton state={startActive == 0 ? "startbtn" : "startbtnIn"} onClickCapture={() => setStartActive(Math.abs(startActive - 1))} className="font-bold subpixel-antialiased">
           Пуск

@@ -6,6 +6,8 @@ import Window from "./components/Window";
 import WinList from "./components/WinList";
 import WinButton from "./components/WinButton";
 
+import keys from "./public/keys_sm.png";
+
 const Login = () => {
   const [Active, setActive] = useState(0);
 
@@ -15,7 +17,7 @@ const Login = () => {
   }
 
   function emptyClick() {
-    console.log(FocusedItem)
+    console.log(FocusedItem);
     setActive(-1);
     FocusedItem > 0 && setFocusedItem(-1 * FocusedItem);
     setFocusedList(-1);
@@ -23,16 +25,16 @@ const Login = () => {
 
   function goTo(setFocusedD, userList, FocusedItem) {
     setFocusedD(true);
-    var linkTo = userList[Math.abs(FocusedItem) - 1]
-    router.push("/" + linkTo)
+    var linkTo = userList[Math.abs(FocusedItem) - 1];
+    router.push("/" + linkTo);
   }
-  
+
   const constraintsRef = useRef(null);
   const [FocusedList, setFocusedList] = useState(false);
   const [FocusedItem, setFocusedItem] = useState(0);
   const [FocusedD, setFocusedD] = useState(false);
   const router = useRouter();
-  const [userList, setUserList] = useState(["nn-of", "deltacraft"])
+  const [userList, setUserList] = useState(["nn-of", "deltacraft"]);
 
   return (
     <div className="bg-[#088] h-screen w-full">
@@ -46,21 +48,31 @@ const Login = () => {
       >
         <Window
           dragConstraints={constraintsRef}
-          img={""}
+          img={keys}
           key={0}
           isWinFocused={isWinActive(Active, 0)}
           titleName={"Добро пожаловать в NikitaNik_OS 98"}
-          onClickCapture={() => setActive(0)}
+          onClick={() => setActive(0)}
           classNameContent={"flex-col p-4 flex justify-between"}
-          navButtons = {[0, 0, 0]}
+          navButtons={[0, 0, 0]}
         >
           <div className=" space-y-1">
             <div>Выберите пользователя системы:</div>
-            <WinList className="h-20" list={userList} focusedItem={FocusedItem} setFocusedItem={setFocusedItem}/>
-            <div>Выбран: {userList[Math.abs(FocusedItem) - 1]}, {FocusedItem}</div>
+            <WinList className="h-20" list={userList} focusedItem={FocusedItem} setFocusedItem={setFocusedItem} />
+            <div>
+              Выбран: {userList[Math.abs(FocusedItem) - 1]}, {FocusedItem}
+            </div>
           </div>
           <div className="flex justify-end">
-            <WinButton id="TestToD" onClick={() => {FocusedItem == 0 ? null : goTo(setFocusedD, userList, FocusedItem)}} state={FocusedItem == 0 ? "disabled" : "default"}>Войти</WinButton>
+            <WinButton
+              id="TestToD"
+              onClick={() => {
+                FocusedItem == 0 ? null : goTo(setFocusedD, userList, FocusedItem);
+              }}
+              state={FocusedItem == 0 ? "disabled" : "default"}
+            >
+              Войти
+            </WinButton>
           </div>
         </Window>
       </motion.div>

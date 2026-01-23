@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Link from "./Link";
 import WinButton from "./WinButton";
 
-const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
+const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) => {
   function isWinActive(cur, id) {
     if (cur == id) return true;
     else false;
@@ -37,6 +37,16 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
     setWindowsList(copyList)    
   }
 
+  function LinkClicked(id, type, param) {
+    if (type == "win") {
+        OpenWin(param)
+    }
+    if (type == "page") {
+        router.push("/" + param)
+    }
+    
+  }
+
   const constraintsRef = useRef(null);
   const [FocusedIcon, setFocusedIcon] = useState(-1);
   const router = useRouter();
@@ -48,7 +58,26 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
       id="desktop"
       className="flex flex-col bg-transparent w-full min-h-full grow items-center"
     >
-      <Link
+      {linkList.map((item, index) => {
+        return (
+          <Link
+            key={item[0]}
+            dragConstraints={constraintsRef}
+            onClick={() => {
+              mouseClick(item[0]);
+            }}
+            onDoubleClick={() => {
+                LinkClicked(item[0], item[3], item[4]);
+            }}
+            isfocused={FocusedIcon == item[0] ? true : false}
+            LinkIcon={item[2]}
+            LinkName={item[1]}
+            id={item[0]}
+          ></Link>
+        );
+      })}
+
+      {/* <Link
         dragConstraints={constraintsRef}
         onClick={() => {
           mouseClick(0);
@@ -98,7 +127,10 @@ const Desktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
         LinkIcon=""
         LinkName="Crash System"
         id={3}
-      ></Link>
+      ></Link> */}
+
+
+
 
       <div className="grow flex justify-center w-full min-h-full ">
         {WindowsList.map((wind, i) => (
