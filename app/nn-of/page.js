@@ -3,7 +3,7 @@ import WinButton from "./../components/WinButton";
 import Image from "next/image";
 import { useState } from "react";
 import Desktop from "./../components/Desktop";
-import Clock from "react-live-clock";
+// import Clock from "react-live-clock";
 import { IoMdArrowDropright } from "react-icons/io";
 
 // images windows
@@ -106,7 +106,7 @@ export default function Home() {
           <Image alt="3" src={ToolsGear} height={20}/>
           <Image alt="balls" src={ToolsGear} height={20}/>
           <div className="ml-2 w-14 text-sm grow my-auto text-center">
-            <Clock format={"HH:mm:ss"} style={{ fontSize: "1em" }} ticking={true} noSsr />
+            {/* <Clock format={"HH:mm:ss"} style={{ fontSize: "1em" }} ticking={true} noSsr /> */}
           </div>
         </WinButton>
       </div>
