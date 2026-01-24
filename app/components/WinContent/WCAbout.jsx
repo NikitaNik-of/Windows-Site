@@ -13,9 +13,10 @@ const WCAbout = () => {
         <p>
           
         </p>
-        <div>
+        {/* <div>
             <Tabs className="h-32"/>
-        </div>
+        </div> */}
+        <div className='shadow-w98-def'>ver. 0.1dev</div>
     </div>
   )
 }
