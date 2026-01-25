@@ -64,13 +64,13 @@ const Links = () => {
       </div>
 
       <div className='flex flex-wrap justify-center gap-x-2 gap-y-1 m-1 p-3 shadow-w98-pressed'>
-        <WinButton onClick={() => {window.open("https://t.me/NikitaNik_of", "_blank")}}>
+        <WinButton onClick={() => {window.open("https://boosty.to/nikitanik_of", "_blank")}}>
           <div className='flex gap-x-1'>
             {/* <Image className='w-6 h-6' src={logoTG} alt="" /> */}
             <div className=' '>Boosty</div>
           </div>
         </WinButton>
-        <WinButton onClick={() => {navigator.clipboard.writeText("@nikitanik_of")}}>
+        <WinButton onClick={() => {window.open("https://dalink.to/nikitanik_of", "_blank")}}>
           <div className='flex gap-x-1'>
             {/* <Image className='w-6 h-6' src={logoDC} alt="" /> */}
             <div className='text-center'>Донат</div>

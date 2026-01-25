@@ -37,7 +37,7 @@ const Window = ({ closeWin, size = "size-win-default", footer = null, footer2 = 
             <span className="text-white flex-1">{titleName}</span>
             <WinHeaderButtons navButtons={navButtons} closeWin={closeWin} winID={winID} />
           </div>
-          <div className={classNameContent + " grow text-sm overflow-y-scroll select-text"} draggable={false}>
+          <div className={classNameContent + " grow text-sm overflow-y-auto select-text"} draggable={false}>
             {winID == 0 ? <WCAbout /> : winID == 1 ? <Links /> : children}
           </div>
           {footer2 != null ? <div className="grid grid-cols-2">

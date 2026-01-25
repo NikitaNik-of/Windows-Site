@@ -21,7 +21,7 @@ import link from "./../assets/images/link_book.png";
 
 export default function Home() {
   const [WindowsList, setWindowsList] = useState([
-    [0, "Обо мне", User, User, false, "-translate-x-[250px] translate-y-[70px]", "© 2022-2026 NikitaNik_of", "Версия сайта: v0.0.1", "size-win-about"],
+    [0, "Обо мне", User, User, false, "-translate-x-[250px] translate-y-[70px]", "© 2022-2026 NikitaNik_of", "Версия сайта: v0.0.2", "size-win-about"],
     [1, "Ссылки", globeBook, link, false, "translate-x-[300px] translate-y-[150px]", null, null, "size-win-links"],
     [2, "TitleName2", dirIm, dirIm_sm, false, "-translate-x-1/2 translate-y-1/2", null, null, "size-win-default"],
   ]);
