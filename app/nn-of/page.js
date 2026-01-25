@@ -7,23 +7,23 @@ import Desktop from "./../components/Desktop";
 import { IoMdArrowDropright } from "react-icons/io";
 
 // images windows
-import dirIm from "./../public/dir_md.png";
-import dirIm_sm from "./../public/dir_sm.png";
-import ToolsGear from "./../public/tools_gear-0.png";
-import globeBook from "./../public/globe_book.png";
-import User from "./../public/user.png";
+import dirIm from "./../assets/images/dir_md.png";
+import dirIm_sm from "./../assets/images/dir_sm.png";
+import ToolsGear from "./../assets/images/tools_gear-0.png";
+import globeBook from "./../assets/images/globe_book.png";
+import User from "./../assets/images/user.png";
 
 // images links
-import Shell from "./../public/shell.png"
-import keys from "./../public/keys_sm.png";
-import link from "./../public/link_book.png";
+import Shell from "./../assets/images/shell.png"
+import keys from "./../assets/images/keys_sm.png";
+import link from "./../assets/images/link_book.png";
 // import user from "./../public/user.png";
 
 export default function Home() {
   const [WindowsList, setWindowsList] = useState([
-    [0, "Обо мне", User, User, true, "-translate-x-[250px] translate-y-[70px]"],
-    [1, "Ссылки", globeBook, link, true, "translate-x-[300px] translate-y-[150px]"],
-    [2, "TitleName2", dirIm, dirIm_sm, false, "-translate-x-1/2 translate-y-1/2"],
+    [0, "Обо мне", User, User, false, "-translate-x-[250px] translate-y-[70px]", "© 2022-2026 NikitaNik_of", "Версия сайта: v0.0.1", "size-win-about"],
+    [1, "Ссылки", globeBook, link, false, "translate-x-[300px] translate-y-[150px]", null, null, "size-win-links"],
+    [2, "TitleName2", dirIm, dirIm_sm, false, "-translate-x-1/2 translate-y-1/2", null, null, "size-win-default"],
   ]);
   const [linkList, setLinkList] = useState([
     [0, "Обо мне", User, "win", 0],

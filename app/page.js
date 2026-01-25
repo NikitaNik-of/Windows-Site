@@ -6,7 +6,7 @@ import Window from "./components/Window";
 import WinList from "./components/WinList";
 import WinButton from "./components/WinButton";
 
-import keys from "./public/keys_sm.png";
+import keys from "./assets/images/keys_sm.png";
 
 const Login = () => {
   const [Active, setActive] = useState(0);

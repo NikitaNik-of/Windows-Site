@@ -5,7 +5,7 @@ import Desktop from "./Desktop";
 import Links from "./WinContent/WCLinks";
 import WCAbout from "./WinContent/WCAbout";
 
-const Window = ({ closeWin, isWinFocused, img, onClick, titleName = "Приложение", className, classNameContent, children, winID, navButtons = [1, 0, 2], ...props }) => {
+const Window = ({ closeWin, size = "size-win-default", footer = null, footer2 = null, isWinFocused, img, onClick, titleName = "Приложение", className, classNameContent, children, winID, navButtons = [1, 0, 2], ...props }) => {
   function WindowHead(foc) {
     if (foc) {
       return "from-[#000080] to-[#0884CE]";
@@ -24,8 +24,8 @@ const Window = ({ closeWin, isWinFocused, img, onClick, titleName = "Прило�
       dragMomentum={false}
       className={(isWinFocused ? "z-10" : "z-0") + " cursor-default " + className}
     >
-      <div className="bg-[#c2c2c2] min-w-96 min-h-64 shadow-w98-def">
-        <div className="h-full w-full p-[2px]">
+      <div className="bg-[#c2c2c2] shadow-w98-def flex-col flex">
+        <div className={"grow flex flex-col w-full p-[2px] " + size}>
           <div
             onPointerDown={(e) => {
               dragControls.start(e);
@@ -37,9 +37,20 @@ const Window = ({ closeWin, isWinFocused, img, onClick, titleName = "Прило�
             <span className="text-white flex-1">{titleName}</span>
             <WinHeaderButtons navButtons={navButtons} closeWin={closeWin} winID={winID} />
           </div>
-          <div className={classNameContent + " grow text-sm"} draggable={false}>
+          <div className={classNameContent + " grow text-sm overflow-y-scroll select-text"} draggable={false}>
             {winID == 0 ? <WCAbout /> : winID == 1 ? <Links /> : children}
           </div>
+          {footer2 != null ? <div className="grid grid-cols-2">
+            <div className="shadow-w98-pressed py-0.5 h-6 px-1 text-sm">
+              {footer}
+            </div>
+            <div className="shadow-w98-pressed py-0.5 h-6 px-1 text-sm">
+              {footer2}
+            </div>
+          </div> :
+          footer != null ? <div className="shadow-w98-pressed py-0.5 h-6 px-1 text-sm">
+            {footer}
+          </div> : null}
         </div>
       </div>
     </motion.div>

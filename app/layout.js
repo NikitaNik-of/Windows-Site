@@ -10,7 +10,7 @@ const InterFont = Inter_Tight({
 const NNserif = localFont({
   src: [
     {
-      path: './fonts/nn-ms-serif.ttf',
+      path: './assets/fonts/nn-ms-serif.ttf',
       weight: '400',
       style: 'normal'
     }
@@ -21,7 +21,7 @@ const NNserif = localFont({
 const whiterabbit = localFont({
   src: [
     {
-      path: './fonts/whiterabbit-webfont.ttf',
+      path: './assets/fonts/whiterabbit-webfont.ttf',
       weight: '400',
       style: 'normal'
     }
@@ -35,7 +35,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${InterFont.variable} ${NNserif.variable} ${whiterabbit.variable} font-nns`}>
+    <html lang="en" className={`${InterFont.variable} ${NNserif.variable} ${whiterabbit.variable} font-nns cursor-default`}>
       <body className="">{children}</body>
     </html>
   );
