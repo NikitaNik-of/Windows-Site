@@ -42,7 +42,7 @@ body {
   --shadow-w98-w-in: -1px -1px 0px 0px rgba(255, 255, 255, 1) inset;
   --shadow-w98-g-in: 1px 1px 0px 0px rgba(135, 135, 135, 0.9) inset;
   --shadow-w98-b-in: 1px 1px 0px 0px rgba(0, 0, 0, 0.9) inset;
-  
+
   --shadow-w98-def: -1px -1px 0px 0px #404040 inset, 1px 1px 0px 0px #ffffff inset, -2px -2px 0px 0px #808080 inset, 2px 2px 0px 0px #eceae7 inset;
   --shadow-w98-pressed: -1px -1px 0px 0px #ffffff inset, 1px 1px 0px 0px #404040 inset, -2px -2px 0px 0px #eceae7 inset, 2px 2px 0px 0px #808080 inset;
   --shadow-w98-tabdef: -1px 0px 0px 0px #404040 inset, 1px 1px 0px 0px #ffffff inset, -2px 0px 0px 0px #808080 inset, 2px 2px 0px 0px #eceae7 inset;
@@ -55,7 +55,6 @@ body {
   --cursor-help: url("./assets/cursors/help.cur"), help;
   --cursor-text: url("./assets/cursors/text.cur"), text;
   --cursor-not-allowed: url("./assets/cursors/no.cur"), not-allowed;
-
 }
 
 /*
@@ -78,15 +77,20 @@ body {
 
 .size-win-about {
   height: 300px;
-  width: 450px
+  width: 450px;
 }
 
 .size-win-links {
   height: 370px;
-  width: 440px
+  width: 440px;
+}
+
+.size-win-login {
+  height: 300px;
+  width: 400px;
 }
 
 .size-win-default {
   height: 600px;
-  width: 800px
+  width: 800px;
 }

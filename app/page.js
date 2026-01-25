@@ -55,6 +55,7 @@ const Login = () => {
           onClick={() => setActive(0)}
           classNameContent={"flex-col p-4 flex justify-between"}
           navButtons={[0, 0, 0]}
+          size="size-win-login"
         >
           <div className=" space-y-1">
             <div>Выберите пользователя системы:</div>
