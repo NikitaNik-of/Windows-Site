@@ -35,7 +35,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${InterFont.variable} ${NNserif.variable} ${whiterabbit.variable} font-nns cursor-default`}>
+    <html lang="en" className={`${InterFont.variable} ${NNserif.variable} ${whiterabbit.variable} font-nns cursor-default overflow-hidden`}>
       <body className="">{children}</body>
     </html>
   );

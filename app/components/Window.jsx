@@ -4,6 +4,7 @@ import WinHeaderButtons from "./WinHeaderButtons";
 import Desktop from "./Desktop";
 import Links from "./WinContent/WCLinks";
 import WCAbout from "./WinContent/WCAbout";
+import DCPlayers from "./WinContent/DCPlayers";
 
 const Window = ({ closeWin, size = "size-win-default", footer = null, footer2 = null, isWinFocused, img, onClick, titleName = "Приложение", className, classNameContent, children, winID, navButtons = [1, 0, 2], ...props }) => {
   function WindowHead(foc) {
@@ -38,7 +39,11 @@ const Window = ({ closeWin, size = "size-win-default", footer = null, footer2 = 
             <WinHeaderButtons navButtons={navButtons} closeWin={closeWin} winID={winID} />
           </div>
           <div className={classNameContent + " grow text-sm overflow-y-auto select-text"} draggable={false}>
-            {winID == 0 ? <WCAbout /> : winID == 1 ? <Links /> : children}
+            {winID == 0 ? <WCAbout />
+            : winID == 1 ? <Links />
+            : winID == 10 ? <Links />
+            : winID == 11 ? <DCPlayers/>
+            : children}
           </div>
           {footer2 != null ? <div className="grid grid-cols-2">
             <div className="shadow-w98-pressed py-0.5 h-6 px-1 text-sm">

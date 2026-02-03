@@ -6,6 +6,8 @@ import Window from "./components/Window";
 import WinList from "./components/WinList";
 import WinButton from "./components/WinButton";
 
+import settings from "./assets/api/settings.json";
+
 import keys from "./assets/images/keys_sm.png";
 
 const Login = () => {
@@ -56,13 +58,14 @@ const Login = () => {
           classNameContent={"flex-col p-4 flex justify-between"}
           navButtons={[0, 0, 0]}
           size="size-win-login"
+          footer={"Версия сайта: v" + settings.version}
         >
           <div className=" space-y-1">
             <div>Выберите пользователя системы:</div>
             <WinList className="h-20" list={userList} focusedItem={FocusedItem} setFocusedItem={setFocusedItem} />
-            <div>
+            {/* <div>
               Выбран: {userList[Math.abs(FocusedItem) - 1]}, {FocusedItem}
-            </div>
+            </div> */}
           </div>
           <div className="flex justify-end">
             <WinButton

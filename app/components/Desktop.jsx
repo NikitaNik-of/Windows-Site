@@ -24,15 +24,18 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
 
   function CloseWin(id) {
     var copyList = [...WindowsList]
-    copyList[id][4] = false
+    var indexFound = copyList.findIndex(element => element[0] == id)
+    copyList[indexFound][4] = false
     setWindowsList(copyList)    
   }
 
   function OpenWin(id) {
     var copyList = [...WindowsList]
-    copyList[id][4] = true
-    if (WindowsList[id][4]) {
-        setActive(id)
+    var indexFound = copyList.findIndex(item => item[0] == id)
+    console.log(indexFound, id, copyList)
+    copyList[indexFound][4] = true
+    if (WindowsList[indexFound][4]) {
+        setActive(indexFound)
     }
     setWindowsList(copyList)    
   }
