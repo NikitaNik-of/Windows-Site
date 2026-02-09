@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import WinButton from "./WinButton";
 
 
-const Tabs = ({ tabList = ["Tab 1", "Tab 2", "Tab 4"], tabContentList = [<div className="bg-amber-400">а</div>, "ху", "еть"], className }) => {
+const Tabs = ({ tabList = ["Tab 1", "Tab 2", "Tab 4"], tabContentList = ["a", "б", "в"], className }) => {
   const [curTab, setCurTab] = useState(0)
   function selectTab(i) {
     setCurTab(i)
