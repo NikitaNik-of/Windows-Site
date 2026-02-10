@@ -41,7 +41,7 @@ const DCPlayerCard = ({ playerName = null, playerData = null }) => {
               {/* Шоу-ивент от игроков для зрителей */}
             </div>
             <div>
-              <span className="text-base font-bold">Любимый блок в игре:</span> {playerData.favourite_block}
+              <span className="text-base font-bold">Любимый блок в игре:</span> {playerData.favorite_block}
               {/* Гладкий андезит */}
             </div>
             <div>
