@@ -24,15 +24,18 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
 
   function CloseWin(id) {
     var copyList = [...WindowsList]
-    copyList[id][4] = false
+    var indexFound = copyList.findIndex(element => element[0] == id)
+    copyList[indexFound][4] = false
     setWindowsList(copyList)    
   }
 
   function OpenWin(id) {
     var copyList = [...WindowsList]
-    copyList[id][4] = true
-    if (WindowsList[id][4]) {
-        setActive(id)
+    var indexFound = copyList.findIndex(item => item[0] == id)
+    console.log(indexFound, id, copyList)
+    copyList[indexFound][4] = true
+    if (WindowsList[indexFound][4]) {
+        setActive(indexFound)
     }
     setWindowsList(copyList)    
   }
@@ -77,65 +80,11 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
         );
       })}
 
-      {/* <Link
-        dragConstraints={constraintsRef}
-        onClick={() => {
-          mouseClick(0);
-        }}
-        onDoubleClick={() => {
-            OpenWin(0);
-        }}
-        isfocused={FocusedIcon == 0 ? true : false}
-        LinkIcon="About"
-        LinkName="Обо мне"
-        id={0}
-      ></Link>
-
-      <Link
-        dragConstraints={constraintsRef}
-        onClick={() => {
-          mouseClick(1);
-        }}
-        onDoubleClick={() => {
-            OpenWin(1);
-        }}
-        isfocused={FocusedIcon == 1 ? true : false}
-        LinkIcon="Links"
-        LinkName="Ссылки"
-        id={1}
-      ></Link>
-
-      <Link
-        dragConstraints={constraintsRef}
-        onDoubleClick={() => router.push("/")}
-        onClick={() => {
-          mouseClick(2);
-        }}
-        isfocused={FocusedIcon == 2 ? true : false}
-        LinkIcon=""
-        LinkName="Login Screen"
-        id={2}
-      ></Link>
-
-      <Link
-        dragConstraints={constraintsRef}
-        onDoubleClick={() => router.push("/404")}
-        onClick={() => {
-          mouseClick(3);
-        }}
-        isfocused={FocusedIcon == 3 ? true : false}
-        LinkIcon=""
-        LinkName="Crash System"
-        id={3}
-      ></Link> */}
-
-
-
 
       <div className="grow flex justify-center w-full min-h-full ">
         {WindowsList.map((wind, i) => (
           <Window
-            classNameContent="flex items-start grow-0 p-1 space-x-2"
+            classNameContent="flex items-start p-1 space-x-2"
             dragConstraints={constraintsRef}
             winID = {wind[0]}
             img={wind[2]}
@@ -145,6 +94,9 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
             onClick={() => {setActive(wind[0])}}
             className={wind[4] ? (" absolute " + wind[5]) : "  hidden"}
             closeWin={CloseWin}
+            footer={wind[6]}
+            footer2={wind[7]}
+            size={wind[8]}
           >
             <WinButton onClick={() => {CloseWin(wind[0])}}>Hello</WinButton>
             <WinButton>OK</WinButton>

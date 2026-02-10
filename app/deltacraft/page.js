@@ -1,12 +1,10 @@
 "use client";
-import WinButton from "./../components/WinButton";
+import WinButton from "../components/WinButton";
 import Image from "next/image";
 import { useState } from "react";
-import Desktop from "./../components/Desktop";
+import Desktop from "../components/Desktop";
 // import Clock from "react-live-clock";
 import { IoMdArrowDropright } from "react-icons/io";
-
-// import api;
 import settings from "./../assets/api/settings.json";
 
 // images windows
@@ -16,7 +14,6 @@ import globeBook from "./../assets/images/globe_book.png";
 import User from "./../assets/images/user.png";
 
 // images links
-import Shell from "./../assets/images/shell.png"
 import keys from "./../assets/images/keys_sm.png";
 import link from "./../assets/images/link_book.png";
 import StartMenu from "../components/StartMenu";
@@ -24,21 +21,20 @@ import StartMenu from "../components/StartMenu";
 
 export default function Home() {
   const [WindowsList, setWindowsList] = useState([
-    [0, "Обо мне", User, User, false, "-translate-x-[250px] translate-y-[70px]", "© 2022-2026 NikitaNik_of", "Версия сайта: v" + settings.version, "size-win-about"],
-    [1, "Ссылки", globeBook, link, false, "translate-x-[300px] translate-y-[150px]", null, null, "size-win-links"],
+    [10, "О сервере", User, User, false, "-translate-x-[250px] translate-y-[70px]", "© 2022-2026 NikitaNik_of", "Версия сайта: v" + settings.version, "size-win-about"],
+    [11, "Игроки", globeBook, link, false, "translate-x-[0px] translate-y-[50px]", null, null, "size-win-dc-players"],
   ]);
   const [linkList, setLinkList] = useState([
-    [0, "Обо мне", User, "win", 0],
-    [1, "Ссылки", link, "win", 1],
-    [2, "Login Screen", keys, "page", ""],
-    [3, "Crash System", Shell, "page", "404"],
+    [0, "О сервере", User, "win", 10],
+    [1, "Игроки", link, "win", 11],
+    [2, "Login Screen", keys, "page", ""]
   ]);
   const [Active, setActive] = useState(0);
   const [startActive, setStartActive] = useState(0);
 
   return (
     <main
-      className=" select-none flex min-h-screen flex-col items-center justify-between bg-[#008080]"
+      className=" select-none flex min-h-screen flex-col items-center justify-between bg-[#00a143]"
       onClickCapture={() => {
         setStartActive(0);
       }}

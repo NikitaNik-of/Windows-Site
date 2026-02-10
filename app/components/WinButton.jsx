@@ -44,9 +44,8 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
       return (
         <div onClickCapture={onClick} className={" " + className}>
           <div className="w-full h-full flex py-0.5 pl-0.5">
-            <div className="[writing-mode:vertical-lr] rotate-180 pr-1 pt-1 from-blue-950 to-blue-600 bg-linear-to-t via-blue-950 text-white tracking-wider font-inter">
-              <text className="text-lg font-black">NikitaNik_os</text>
-              <text className="text-xl font-light">98</text>
+            <div className="py-1 px-1 from-blue-950 to-blue-600 bg-linear-to-t w-8 via-blue-950 text-white tracking-wider font-inter flex flex-col-reverse">
+              <span className="-rotate-90 text-lg font-black flex">{"NikitaNik_os"} <span className="text-xl font-light">{"98"}</span></span>
             </div>
             <div className="flex flex-col justify-end w-full" {...props}>
               {children}
@@ -153,9 +152,9 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
           }
         >
           <div className="px-4 py-1 w-full h-full">
-            <text className="" {...props}>
+            <div className="" {...props}>
               {children}
-            </text>
+            </div>
           </div>
         </div>
       );
