@@ -9,7 +9,7 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
         <div
           onClick={onClick}
           className={
-            "min-w-[75px] min-h-[23px] text-center shadow-w98-def active:shadow-w98-pressed bg-[#c2c2c2] cursor-pointer " +
+            "min-w-18.25 min-h-5.75 text-center shadow-w98-def active:shadow-w98-pressed bg-[#c2c2c2] cursor-pointer " +
             " focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " +
             className +
             " text-transparent text-shadow-[0_0_#222] active:text-shadow-[1px_1px_#222] "
@@ -28,7 +28,7 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
         <div
           onClick={onClick}
           className={
-            "min-w-[75px] min-h-[23px] text-center bg-[#c2c2c2] shadow-w98-def cursor-not-allowed "
+            "min-w-18.25 min-h-5.75 text-center bg-[#c2c2c2] shadow-w98-def cursor-not-allowed "
             + "focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " + className
           }
         >
@@ -74,7 +74,7 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
 
     case "bar":
       return (
-        <div onClick={onClick} className={"active:shadow-w98-pressed active:pt-[2px] active:pl-[2px] bg-[#c2c2c2] shadow-w98-def cursor-pointer " + className}>
+        <div onClick={onClick} className={"active:shadow-w98-pressed active:pt-0.5 active:pl-0.5 bg-[#c2c2c2] shadow-w98-def cursor-pointer " + className}>
           <div className="px-2 py-px w-full h-full flex items-center">
             <Image alt="" src={img} height={16} className="mr-1" />
             <div {...props}>{children}</div>
@@ -146,7 +146,7 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
         <div
           onClick={onClick}
           className={
-            "min-w-[75px] min-h-[23px] text-center bg-[#c2c2c2] shadow-w98-tabdef mb-0.5"
+            "min-w-18.25 min-h-5.75 text-center bg-[#c2c2c2] shadow-w98-tabdef mb-0.5"
             + " focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " + className +
             " text-transparent text-shadow-[0_0_#222] active:text-shadow-[1px_1px_#222] "
           }
@@ -164,7 +164,7 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
         <div
           onClick={onClick}
           className={
-            "min-w-[75px] min-h-[23px] text-center bg-[#c2c2c2] shadow-w98-tabdef -mt-0.5 pt-0.5"
+            "min-w-18.25 min-h-5.75 text-center bg-[#c2c2c2] shadow-w98-tabdef -mt-0.5 pt-0.5"
             + " focus:outline-dotted focus:-outline-offset-4 focus:outline-1 focus:outline-blackу " + className +
             " text-transparent text-shadow-[0_0_#222] active:text-shadow-[1px_1px_#222] "
           }
