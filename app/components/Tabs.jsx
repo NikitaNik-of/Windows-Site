@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import WinButton from "./WinButton";
 
 
-const Tabs = ({ tabList = ["Tab 1", "Tab 2", "Tab 4"], tabContentList = ["a", "б", "в"], className }) => {
-  const [curTab, setCurTab] = useState(0)
+const Tabs = ({ tabList = ["Tab 1", "Tab 2", "Tab 4"], tabContentList = ["a", "б", "в"], className, curTab, setCurTab }) => {
   function selectTab(i) {
     setCurTab(i)
   }
@@ -17,7 +16,7 @@ const Tabs = ({ tabList = ["Tab 1", "Tab 2", "Tab 4"], tabContentList = ["a", "�
       </div>
       <div className="shadow-w98-def p-2 grow">
         {tabContentList.map((tabCont, i) => (
-          (curTab == i) ? tabCont : null
+          (curTab == i) ? <div key={i} className="h-full">{tabCont}</div> : null
         ))}
       </div>
     </div>
