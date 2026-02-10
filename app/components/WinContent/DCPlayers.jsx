@@ -1,96 +1,46 @@
 import React from 'react'
 import WinList from '../WinList'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Tabs from '../Tabs';
 import players from '../../assets/api/players.json'
-import WinButton from '../WinButton';
+import DCPlayerCard from './DCPlayerCard';
 
 const DCPlayers = () => {
-  const [FocusedItem, setFocusedItem] = useState(0);
-  const [playerList, setPlayerList] = useState({
-    "_Glo0orP_": true,
-    // "_Vadok_": true,
-    "_W1ND": true,
-    "Amax198": true,
-    "BaKyJl": false,
-    "Burburend": true,
-    // "Chuchibam": true,
-    // "folkorost": true,
-    // "G0Bro": true,
-    "katosik3003": true,
-    "LOLOMAC41": false,
-    "Maestro_Playa": true,
-    "Misyre_Odashi": true,
-    // "MrLoloGood": true,
-    // "neNessho": true,
-    "NikitaNik_of": true,
-    "notbad325": true,
-    // "Pe3ep": true,
-    "Rollnot": true,
-    // "RomanPro100": true,
-    "u_KpaTKoe": true,
-    "VD_Kifir": true,
-    "zMakaron": true
-})
+    const [FocusedItem, setFocusedItem] = useState(0);
+    const [activePlayersList, setActivePlayersList] = useState(useMemo(() => getActiveList("active")))
+    const [inactivePlayersList, setInactivePlayersList] = useState(useMemo(() => getActiveList("inactive")))
 
-  return (
-    <div className='grid grid-cols-4 w-full h-full gap-2 p-1'>
-        <div className='h-full'>
-            <Tabs
-            className="h-full"
-            tabList={["Активные", "Неактивные"]}
-            tabContentList={
-              [
-                <WinList className='h-full' list={Object.entries(playerList).filter(([nick, isActive]) => isActive).map(([nick, isActive]) => <div>{nick}</div>)} focusedItem={FocusedItem} setFocusedItem={setFocusedItem}/>,
-                <WinList className='h-full' list={Object.entries(playerList).filter(([nick, isActive]) => !isActive).map(([nick, isActive]) => <div>{nick}</div>)} focusedItem={FocusedItem} setFocusedItem={setFocusedItem}/>
-              ]
-            }/>
-        </div>
-        <div className='bg-[#f7f7f7] col-span-3 shadow-w98-pressed p-2 text-base gap-1 flex flex-col'>
-            <div className='shadow-w98-def bg-[#c2c2c2] p-2 flex gap-4'>
-                <div className='w-24 h-24 shadow-w98-def'></div>
-                <div className='flex flex-col justify-center gap-2'>
-                    <div className='text-3xl'>NikitaNik_of</div>
-                    <div className=''>Технический админ сервера</div>
-                </div>
-            </div>
-            <div className='shadow-w98-def bg-[#c2c2c2] p-2 flex gap-4'>
-                <WinButton>Telegram</WinButton>
-                <WinButton>Twitch</WinButton>
-                <WinButton>Youtube (Основной)</WinButton>
-                <WinButton>Youtube (Второй)</WinButton>
-            </div>
-            <div className='shadow-w98-def bg-[#c2c2c2] p-2 flex flex-col gap-1'>
-                <div className='text-xl font-bold'>О себе:</div>
-                <div className='mb-3'>
-                    Основатель сервера, технический админ, тот кто старается этот сервер держать на плаву.
-                    Учеба и занятость не дают возможности регулярно заниматься медийкой, но желание творить есть.
-                    <br/>
-                    Мин-максер в душе, но квиттер по факту.
-                </div>
-                <div>
-                    <span className='text-base font-bold'>Первый сезон:</span> DebbikCraft: Season Alpha (2018 год)
-                </div>
-                <div>
-                    <span className='text-base font-bold'>Любимый проект:</span> Матрица жителей на DC1
-                </div>
-                <div>
-                    <span className='text-base font-bold'>Проект мечты:</span> Шоу-ивент от игроков для зрителей
-                </div>
-                <div>
-                    <span className='text-base font-bold'>Любимый блок в игре:</span> Гладкий андезит
-                </div>
-                <div>
-                    <span className='text-base font-bold'>Худшая механика игры:</span> Деспавн предметов
-                </div>
-                <div>
-                    <span className='text-base font-bold'>Необычный факт:</span> Преподаватель, и любит математику
-                </div>
+    function getActiveList(type) {
+        const active = [];
+        const inactive = [];
+        
+        Object.entries(players).forEach(([nick, info]) => {
+            const playerObj = { nick, ...info };
+            if (info.active) {
+                active.push(nick);
+            } else {
+                inactive.push(nick);
+            }
+        });
+        return type === "active" ? active : inactive;
+    }
 
-            </div>
-        </div>
-    </div>
-  )
+    return (
+      <div className='grid grid-cols-4 w-full h-full gap-2 p-1'>
+          <div className='h-full'>
+              <Tabs
+              className="h-full"
+              tabList={["Активные", "Неактивные"]}
+              tabContentList={
+                [
+                //   <WinList className='h-full' list={activePlayersList} focusedItem={FocusedItem} setFocusedItem={setFocusedItem}/>,
+                //   <WinList className='h-full' list={inactivePlayersList} focusedItem={FocusedItem} setFocusedItem={setFocusedItem}/>
+                ]
+              }/>
+          </div>
+          <DCPlayerCard />
+      </div>
+    )
 }
 
 export default DCPlayers

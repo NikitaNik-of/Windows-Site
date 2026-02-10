@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import React, { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Window from "./components/Window";
@@ -9,6 +10,7 @@ import WinButton from "./components/WinButton";
 import settings from "./assets/api/settings.json";
 
 import keys from "./assets/images/keys_sm.png";
+import nomobile from "./assets/badges/mobiles.gif";
 
 const Login = () => {
   const [Active, setActive] = useState(0);
@@ -67,7 +69,11 @@ const Login = () => {
               Выбран: {userList[Math.abs(FocusedItem) - 1]}, {FocusedItem}
             </div> */}
           </div>
-          <div className="flex justify-end">
+          <div className="text-[12px] italic">
+            Данный сайт не адаптирован для мобильных устройств, просьба используйте нормальный браузер.
+          </div>
+          <div className="flex justify-between">
+            <Image src={nomobile} alt="" />
             <WinButton
               id="TestToD"
               onClick={() => {

@@ -1,7 +1,6 @@
 import { motion, useDragControls } from "framer-motion";
 import Image from "next/image";
 import WinHeaderButtons from "./WinHeaderButtons";
-import Desktop from "./Desktop";
 import Links from "./WinContent/WCLinks";
 import WCAbout from "./WinContent/WCAbout";
 import DCPlayers from "./WinContent/DCPlayers";
@@ -26,13 +25,13 @@ const Window = ({ closeWin, size = "size-win-default", footer = null, footer2 = 
       className={(isWinFocused ? "z-10" : "z-0") + " cursor-default " + className}
     >
       <div className="bg-[#c2c2c2] shadow-w98-def flex-col flex">
-        <div className={"grow flex flex-col w-full p-[2px] " + size}>
+        <div className={"grow flex flex-col w-full p-0.5 " + size}>
           <div
             onPointerDown={(e) => {
               dragControls.start(e);
             }}
             id="Window-Header"
-            className={"h-6 bg-linear-to-r flex items-center justify-end space-x-1 p-0.5 pl-1 mr-[1px] " + WindowHead(isWinFocused)}
+            className={"h-6 bg-linear-to-r flex items-center justify-end space-x-1 p-0.5 pl-1 mr-px " + WindowHead(isWinFocused)}
           >
             {img != "" ? <Image src={img} alt="" height={20} /> : null}
             <span className="text-white flex-1">{titleName}</span>
