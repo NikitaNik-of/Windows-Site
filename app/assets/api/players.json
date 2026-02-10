@@ -170,7 +170,27 @@
         "favorite_block": "Гладкий андезит",
         "favorite_project": "Матрица жителей на DC1",
         "first_season": "DebbikCraft: Season Alpha (2018 год)",
-        "links": [],
+        "links": [
+            {
+                "name": "Telegram",
+                "url": "https://t.me/nikitanikof"
+            },
+            {
+                "name": "Twitch",
+                "url": "https://www.twitch.tv/nikitanik_of"
+            },
+            {
+                "name": "YouTube",
+                "url": "https://www.youtube.com/@nikitanik_of"
+            },
+            {
+                "name": "YouTube (2nd)",
+                "url": "https://www.youtube.com/@nikitanik_not_of"
+            },
+            {
+                "name": "Boosty",
+                "url": "https://boosty.to/nikitanik_of"
+            }],
         "unusual_fact": "Преподаватель, и любит математику",
         "worst_mechanic": "Деспавн предметов"
     },
