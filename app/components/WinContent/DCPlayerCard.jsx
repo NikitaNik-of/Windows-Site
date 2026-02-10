@@ -33,7 +33,7 @@ const DCPlayerCard = ({ playerName = null, playerData = null }) => {
               {/* DebbikCraft: Season Alpha (2018 год) */}
             </div>
             <div>
-              <span className="text-base font-bold">Любимый проект:</span> {playerData.favourite_project}
+              <span className="text-base font-bold">Любимый проект:</span> {playerData.favorite_project}
               {/* Матрица жителей на DC1 */}
             </div>
             <div>
