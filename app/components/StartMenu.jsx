@@ -5,6 +5,7 @@ import WinButton from './WinButton'
 
 import ToolsGear from "./../assets/images/tools_gear-0.png";
 import dirIm from "./../assets/images/dir_md.png";
+import keys from "./../assets/images/keys.png"
 
 
 const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}) => {
@@ -47,12 +48,12 @@ const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}
                 <div className="h-px bg-white"></div>
               </div>
               <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
-                <Image className="mr-2" height={22} src={dirIm} alt="" />
-                <span>Кнопка нахуй</span>
+                <Image className="mr-2" height={22} src={keys} alt="" />
+                <span>Выйти из системы</span>
               </div>
               <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
-                <Image className="mr-2" height={22} src={dirIm} alt="" />
-                <span className="">Жоповая кнопка кнопка кнопка кнопка</span>
+                {/* <Image className="mr-2" height={22} src={dirIm} alt="" /> */}
+                <span className="">Выключить сайт</span>
               </div>
             </div>
           </div>

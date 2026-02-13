@@ -10,7 +10,7 @@ import logoYT from '../../assets/logos/youtube.png'
 const DCPlayerCard = ({ playerName = null, playerData = null }) => {
   return (
     <div className="bg-[#ebebeb] col-span-3 shadow-w98-pressed p-2 text-base ">
-      {console.log(playerData)}
+      {/* {console.log(playerData)} */}
       {playerName != null ? (
         <div className="gap-1 flex flex-col">
           <div className="shadow-w98-def bg-[#c2c2c2] p-2 flex gap-4">
@@ -21,13 +21,14 @@ const DCPlayerCard = ({ playerName = null, playerData = null }) => {
             </div>
           </div>
           {playerData.links.length != 0 ? (
-            <div className="shadow-w98-def bg-[#c2c2c2] p-2 flex gap-4">
+            <div className="shadow-w98-def bg-[#c2c2c2] p-2 flex flex-wrap gap-x-4 gap-y-2">
               {playerData.links.map((link, i) => (
                 <WinButton
                   onClick={() => {
                     window.open(link.url, "_blank");
                   }}
                   key={i}
+                  className=""
                 >
                     <div className='flex gap-1'>
                         {link.name.toLowerCase().includes("telegram") ? <Image className='w-6 h-6 -ml-1' src={logoTG} alt="" />
@@ -35,7 +36,7 @@ const DCPlayerCard = ({ playerName = null, playerData = null }) => {
                         : link.name.toLowerCase().includes("twitch") ? <Image className='w-6 h-6 -ml-1 p-0.5' src={logoTw} alt="" />
                         : link.name.toLowerCase().includes("discord") ? <Image className='w-6 h-6 -ml-1' src={logoDC} alt="" />
                         : null}
-                        <div className="text-center my-auto grow">{link.name}</div>
+                        <div className="text-center my-auto text-nowrap">{link.name}</div>
                     </div>
                 </WinButton>
               ))}

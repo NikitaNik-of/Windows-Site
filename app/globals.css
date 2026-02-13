@@ -99,3 +99,14 @@ body {
   height: 650px;
   width: 1100px;
 }
+
+.size-win-now {
+  height: 500px;
+  width: 700px;
+}
+
+
+#link {
+   @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600
+}
+

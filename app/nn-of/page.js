@@ -26,12 +26,13 @@ export default function Home() {
   const [WindowsList, setWindowsList] = useState([
     [0, "Обо мне", User, User, false, "-translate-x-[250px] translate-y-[70px]", "© 2022-2026 NikitaNik_of", "Версия сайта: v" + settings.version, "size-win-about"],
     [1, "Ссылки", globeBook, link, false, "translate-x-[300px] translate-y-[150px]", null, null, "size-win-links"],
+    [2, "Now | Я сейчас...", User, User, false, "-translate-x-[350px] translate-y-[200px]", "Обновлено " + settings.dateUpdate, null, "size-win-now"],
   ]);
   const [linkList, setLinkList] = useState([
     [0, "Обо мне", User, "win", 0],
     [1, "Ссылки", link, "win", 1],
-    [2, "Login Screen", keys, "page", ""],
-    [3, "Crash System", Shell, "page", "404"],
+    [2, "Я сейчас...", User, "win", 2],
+    [3, "Login Screen", keys, "page", ""],
   ]);
   const [Active, setActive] = useState(0);
   const [startActive, setStartActive] = useState(0);
