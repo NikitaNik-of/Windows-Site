@@ -22,7 +22,7 @@ const DCPlayers = () => {
         inactive.push(nickname);
       }
     });
-    console.log(active, inactive);
+    console.log(active.length, inactive.length);
 
     return { activePlayers: active, inactivePlayers: inactive };
   }, []);
