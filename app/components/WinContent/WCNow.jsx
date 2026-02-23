@@ -10,9 +10,9 @@ const WCNow = () => {
       <div className="font-bold text-lg mt-2 mb-1">Что я делаю сейчас</div>
       <div className="pl-2">
         <div>- <a href="https://new.nn-of.ru/" target="_blank" id="link">Этот сайт</a>. Прорабатываю структуру и заполняю информацией</div>
+        <div>- Учусь водить машину. 2 занятия до экзамена, но я не уверен, что я справлюсь</div>
         <div>- Слишком много сижу в телефоне и в YouTube </div>
         <div>- Зависаю в инди-Интернете</div>
-        <div>- Востанавливаю данные на ноуте</div>
         <div>- Глажу котика</div>
         {/* <div>- </div> */}
       </div>

@@ -6,12 +6,17 @@ import WinButton from './WinButton'
 import ToolsGear from "./../assets/images/tools_gear-0.png";
 import dirIm from "./../assets/images/dir_md.png";
 import keys from "./../assets/images/keys.png"
+import { Router } from 'next/router';
+import Link from 'next/link';
 
+
+Router
 
 const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}) => {
+
   return (
     <div className="bg-[#c2c2c2] shadow-w98-w w-full flex p-1 z-50 relative">
-        <WinButton state={startActive == 0 ? "startbtn" : "startbtnIn"} onClickCapture={() => setStartActive(Math.abs(startActive - 1))} className="font-bold subpixel-antialiased">
+        <WinButton state={startActive == 0 ? "startbtn" : "startbtnIn"} onClick={() => setStartActive(Math.abs(startActive - 1))} className="font-bold subpixel-antialiased">
           Пуск
         </WinButton>
         {startActive == 1 && (
@@ -41,20 +46,20 @@ const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}
               </div>
               <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
                 <Image className="mr-2" height={22} src={dirIm} alt="" />
-                <span>Menu Option</span>
+                <span>Кнопки снизу работают!</span>
               </div>
               <div className="m-1">
                 <div className="h-px bg-neutral-500"></div>
                 <div className="h-px bg-white"></div>
               </div>
-              <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
+              <Link className="py-2 px-3 flex hover:bg-blue-900 hover:text-white cursor-pointer " href="/">
                 <Image className="mr-2" height={22} src={keys} alt="" />
                 <span>Выйти из системы</span>
-              </div>
-              <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
+              </Link>
+              <Link className="py-2 px-3 flex hover:bg-blue-900 hover:text-white cursor-pointer " href="/shutdown">
                 {/* <Image className="mr-2" height={22} src={dirIm} alt="" /> */}
                 <span className="">Выключить сайт</span>
-              </div>
+              </Link>
             </div>
           </div>
         )}
