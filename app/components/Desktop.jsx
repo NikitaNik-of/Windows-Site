@@ -44,6 +44,9 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
     if (type == "win") {
         OpenWin(param)
     }
+    if (type == "link") {
+        window.open(param)
+    }
     if (type == "page") {
         router.push("/" + param)
     }

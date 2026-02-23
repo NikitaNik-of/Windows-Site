@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useCallback, useEffect } from "react";
 
 const WinList = ({ className, children, list, focusedItem, setFocusedItem, ...props }) => {
   function focusClassName(id, focus) {
@@ -9,7 +10,7 @@ const WinList = ({ className, children, list, focusedItem, setFocusedItem, ...pr
 
   return (
     <div className={"shadow-w98-pressed bg-white " + className}>
-      <div className="p-[2px] w-full h-full">
+      <div className="p-0.5 w-full h-full">
         <div
           onClickCapture={() => {
             setFocusedItem(0);

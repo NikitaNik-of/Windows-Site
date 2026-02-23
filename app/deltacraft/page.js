@@ -22,7 +22,7 @@ import StartMenu from "../components/StartMenu";
 export default function Home() {
   const [WindowsList, setWindowsList] = useState([
     [10, "О сервере", User, User, false, "-translate-x-[250px] translate-y-[70px]", "© 2022-2026 NikitaNik_of", "Версия сайта: v" + settings.version, "size-win-about"],
-    [11, "Игроки", globeBook, link, false, "translate-x-[0px] translate-y-[50px]", null, null, "size-win-dc-players"],
+    [11, "Игроки", globeBook, link, false, "translate-x-[0px] translate-y-[50px]", "Всего игроков: " + settings.playerTotal + " (Активных: " + settings.playersActive + ")", null, "size-win-dc-players"],
   ]);
   const [linkList, setLinkList] = useState([
     [0, "О сервере", User, "win", 10],
