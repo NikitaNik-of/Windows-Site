@@ -19,6 +19,7 @@ const Window = ({ closeWin, size = "size-win-default", footer = null, footer2 = 
     <motion.div
       {...props}
       drag
+      dragElastic={0}
       dragControls={dragControls}
       dragListener={false}
       onMouseDown={onClick}
