@@ -17,7 +17,7 @@ const DCPlayerCard = ({ playerName = null, playerData = null }) => {
             <div className="w-24 h-24 shadow-w98-def"></div>
             <div className="flex flex-col justify-center gap-2">
               <div className="text-3xl">{playerName}</div>
-              {/* <div className="">Технический админ сервера</div> */}
+              {false ? <div className="">Технический админ сервера</div> : null }
             </div>
           </div>
           {playerData.links.length != 0 ? (
