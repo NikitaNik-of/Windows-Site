@@ -110,8 +110,11 @@ body {
   width: 500px;
 }
 
-
-#link {
-   @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600
+.size-win-dc-about {
+  height: 600px;
+  width: 500px;
 }
 
+#link {
+  @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600;
+}

@@ -1,13 +1,15 @@
 import React from 'react'
 import { IoMdArrowDropright } from "react-icons/io";
 import Image from 'next/image'
+import { Router } from 'next/router';
+import Link from 'next/link';
+
 import WinButton from './WinButton'
 
 import ToolsGear from "./../assets/images/tools_gear-0.png";
 import dirIm from "./../assets/images/dir_md.png";
 import keys from "./../assets/images/keys.png"
-import { Router } from 'next/router';
-import Link from 'next/link';
+import Shutdown from '../assets/images/shutdown.png';
 
 
 Router
@@ -57,7 +59,7 @@ const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}
                 <span>Выйти из системы</span>
               </Link>
               <Link className="py-2 px-3 flex hover:bg-blue-900 hover:text-white cursor-pointer " href="/shutdown">
-                {/* <Image className="mr-2" height={22} src={dirIm} alt="" /> */}
+                <Image className="mr-2" height={22} src={Shutdown} alt="" />
                 <span className="">Выключить сайт</span>
               </Link>
             </div>

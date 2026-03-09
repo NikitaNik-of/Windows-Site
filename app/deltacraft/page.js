@@ -1,10 +1,12 @@
 "use client";
-import WinButton from "../components/WinButton";
 import Image from "next/image";
-import { useState } from "react";
-import Desktop from "../components/Desktop";
-// import Clock from "react-live-clock";
 import { IoMdArrowDropright } from "react-icons/io";
+import { useState } from "react";
+// import Clock from "react-live-clock";
+
+import Desktop from "../components/Desktop";
+import StartMenu from "../components/StartMenu";
+import WinButton from "../components/WinButton";
 import settings from "./../assets/api/settings.json";
 
 // images windows
@@ -14,20 +16,18 @@ import globeBook from "./../assets/images/globe_book.png";
 import User from "./../assets/images/user.png";
 
 // images links
-import keys from "./../assets/images/keys_sm.png";
-import link from "./../assets/images/link_book.png";
-import StartMenu from "../components/StartMenu";
-// import user from "./../public/user.png";
+import Shell from "./../assets/images/shell.png"
+import Users from "./../assets/images/users.png"
+import Server from "./../assets/images/server.png"
 
 export default function Home() {
   const [WindowsList, setWindowsList] = useState([
-    [10, "О сервере", User, User, false, "-translate-x-[250px] translate-y-[70px]", "© 2022-2026 NikitaNik_of", "Версия сайта: v" + settings.version, "size-win-about"],
-    [11, "Игроки", globeBook, link, false, "translate-x-[0px] translate-y-[50px]", "Всего игроков: " + settings.playerTotal + " (Активных: " + settings.playersActive + ")", null, "size-win-dc-players"],
+    [10, "О сервере", Server, Server, true, "-translate-x-[250px] translate-y-[70px]", null, null, "size-win-dc-about"],
+    [11, "Игроки", Users, Users, false, "translate-x-[0px] translate-y-[50px]", "Всего игроков: " + settings.playerTotal + " (Активных: " + settings.playersActive + ")", null, "size-win-dc-players"],
   ]);
   const [linkList, setLinkList] = useState([
-    [0, "О сервере", User, "win", 10],
-    [1, "Игроки", link, "win", 11],
-    [2, "Login Screen", keys, "page", ""]
+    [0, "О сервере", Server, "win", 10],
+    [1, "Игроки", Users, "win", 11]
   ]);
   const [Active, setActive] = useState(0);
   const [startActive, setStartActive] = useState(0);

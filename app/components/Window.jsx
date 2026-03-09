@@ -6,6 +6,7 @@ import WCAbout from "./WinContent/WCAbout";
 import DCPlayers from "./WinContent/DCPlayers";
 import WCNow from "./WinContent/WCNow"; 
 import WCButtons from "./WinContent/WCButtons";
+import DCAbout from "./WinContent/DCAbout";
 
 const Window = ({ closeWin, size = "size-win-default", footer = null, footer2 = null, isWinFocused, img, onClick, titleName = "Приложение", className, classNameContent, children, winID, navButtons = [1, 0, 2], ...props }) => {
   function WindowHead(foc) {
@@ -45,7 +46,7 @@ const Window = ({ closeWin, size = "size-win-default", footer = null, footer2 = 
             : winID == 1 ? <Links />
             : winID == 2 ? <WCNow />
             : winID == 3 ? <WCButtons />
-            : winID == 10 ? <Links />
+            : winID == 10 ? <DCAbout />
             : winID == 11 ? <DCPlayers/>
             : children}
           </div>
