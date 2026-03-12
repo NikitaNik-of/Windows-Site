@@ -5,6 +5,7 @@ import Window from "./Window";
 import { motion } from "framer-motion";
 import Link from "./Link";
 import WinButton from "./WinButton";
+import Shell from "./../assets/images/shell.png"
 
 const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) => {
   function isWinActive(cur, id) {
@@ -62,29 +63,31 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
       onClickCapture={emptyClick}
       ref={constraintsRef}
       id="desktop"
-      className="flex flex-col bg-transparent w-full min-h-full grow items-center"
+      className="flex flex-col bg-transparent relative w-full min-h-full grow items-center"
     >
-      {linkList.map((item, index) => {
-        return (
-          <Link
-            key={item[0]}
-            dragConstraints={constraintsRef}
-            onClick={() => {
-              mouseClick(item[0]);
-            }}
-            onDoubleClick={() => {
-                LinkClicked(item[0], item[3], item[4]);
-            }}
-            isfocused={FocusedIcon == item[0] ? true : false}
-            LinkIcon={item[2]}
-            LinkName={item[1]}
-            id={item[0]}
-          ></Link>
-        );
-      })}
+      <div className="left-1 top-2 absolute self-start grid grid-rows-[repeat(auto-fill,85px)] grid-cols-[repeat(auto-fill,85px)] grid-flow-col gap-1 w-full h-full">
+        {linkList.map((item, index) => {
+          return (
+            <Link
+              key={item[0]}
+              dragConstraints={constraintsRef}
+              onClick={() => {
+                mouseClick(item[0]);
+              }}
+              onDoubleClick={() => {
+                  LinkClicked(item[0], item[3], item[4]);
+              }}
+              isfocused={FocusedIcon == item[0] ? true : false}
+              LinkIcon={(item[2] != null) ? item[2] : Shell}
+              LinkName={item[1]}
+              id={item[0]}
+            ></Link>
+          );
+        })}
+      </div>
 
 
-      <div className="grow flex justify-center w-full min-h-full ">
+      <div className="grow flex justify-center w-full h-0 ">
         {WindowsList.map((wind, i) => (
           <Window
             classNameContent="flex items-start p-1 space-x-2"

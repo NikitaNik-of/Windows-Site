@@ -36,13 +36,15 @@ export default function Home() {
     [1, "Ссылки", Net, Net, false, "translate-x-[300px] translate-y-[150px]", null, null, "size-win-links"],
     [2, "Now | Я сейчас...", Note, Note_sm, false, "-translate-x-[350px] translate-y-[200px]", "Обновлено " + settings.dateUpdate, null, "size-win-now"],
     [3, "Интернет-кнопки", Internet_sm, Internet_sm, false, "translate-x-[100px] translate-y-[300px]", null, null, "size-win-buttons"],
+    [4, "Арт-галерея", Shell, Shell, false, "-translate-x-[200px] translate-y-[100px]", "3 objects", "Мой сайт", "size-win-arts"],
   ]);
   const [linkList, setLinkList] = useState([
     [0, "Обо мне", User, "win", 0],
     [1, "Ссылки", LinkBook, "win", 1],
     [2, "Я сейчас...", Note, "win", 2],
     [3, "Интернет-кнопки", Internet, "win", 3],
-    [4, "Прошлый сайт", WebPage, "link", "https://nn-of.ru/"],
+    [4, "Арт-галерея", Shell, "win", 4],
+    [9, "Прошлый сайт", WebPage, "link", "https://nn-of.ru/"],
   ]);
   const [Active, setActive] = useState(0);
   const [startActive, setStartActive] = useState(0);
