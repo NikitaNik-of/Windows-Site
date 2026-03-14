@@ -30,7 +30,7 @@ const WCButtons = () => {
         </div>
         <div className="font-bold text-lg mt-2 mb-1">Кнопки классных сайтов</div>
         <div className="flex flex-wrap gap-0.5">
-
+          <a href="https://simone.computer/" target="_blank"><img width="88" height="31" src={"https://simone.computer/static/media/88x31.99974d79.gif"} alt=""/></a>
         </div>
     </div>
   )

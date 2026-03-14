@@ -42,6 +42,7 @@ const Login = () => {
 
   return (
     <div className="bg-[#088] h-screen w-full">
+      <title>NikitaNik_OS | Login Screen</title>
       <motion.div
         onClickCapture={() => {
           emptyClick();

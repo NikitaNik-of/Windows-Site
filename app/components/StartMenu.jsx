@@ -1,13 +1,15 @@
 import React from 'react'
 import { IoMdArrowDropright } from "react-icons/io";
 import Image from 'next/image'
+import { Router } from 'next/router';
+import Link from 'next/link';
+
 import WinButton from './WinButton'
 
 import ToolsGear from "./../assets/images/tools_gear-0.png";
 import dirIm from "./../assets/images/dir_md.png";
 import keys from "./../assets/images/keys.png"
-import { Router } from 'next/router';
-import Link from 'next/link';
+import Shutdown from '../assets/images/shutdown.png';
 
 
 Router
@@ -22,8 +24,8 @@ const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}
         {startActive == 1 && (
           <div onClickCapture={() => setStartActive(1)} className="absolute bg-[#c2c2c2] bottom-8.5 left-0 flex cursor-default shadow-w98-def">
             <WinButton state="start"/>
-            <div className="py-0.5 pr-0.5">
-              <div className="py-2 px-3 flex items-center hover:bg-blue-900 hover:text-white justify-between gap-2">
+            <div className="py-0.5 pr-0.5 flex-col flex justify-end">
+              {/* <div className="py-2 px-3 flex items-center hover:bg-blue-900 hover:text-white justify-between gap-2">
                 <Image className="shrink-0 aspect-square" height={22} src={dirIm} alt="" />
                 <span className="grow">Folder</span>
                 <IoMdArrowDropright className="shrink-0 my-auto" />
@@ -43,10 +45,10 @@ const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}
               <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
                 <Image className="mr-2" height={22} src={dirIm} alt="" />
                 <span>Menu Option</span>
-              </div>
-              <div className="py-2 px-3 flex hover:bg-blue-900 hover:text-white">
-                <Image className="mr-2" height={22} src={dirIm} alt="" />
-                <span>Кнопки снизу работают!</span>
+              </div> */}
+              <div className="py-2 px-3 flex">
+                {/* <Image className="mr-2" height={22} src={dirIm} alt="" /> */}
+                <span className='italic text-sm'>Кнопки снизу работают!</span>
               </div>
               <div className="m-1">
                 <div className="h-px bg-neutral-500"></div>
@@ -57,7 +59,7 @@ const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}
                 <span>Выйти из системы</span>
               </Link>
               <Link className="py-2 px-3 flex hover:bg-blue-900 hover:text-white cursor-pointer " href="/shutdown">
-                {/* <Image className="mr-2" height={22} src={dirIm} alt="" /> */}
+                <Image className="mr-2" height={22} src={Shutdown} alt="" />
                 <span className="">Выключить сайт</span>
               </Link>
             </div>

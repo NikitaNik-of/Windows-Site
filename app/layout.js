@@ -28,10 +28,6 @@ const whiterabbit = localFont({
   ],
   variable: '--font-whiterabbit'
 })
-export const metadata = {
-  title: "NN_of 98",
-  description: "",
-};
 
 export default function RootLayout({ children }) {
   return (
