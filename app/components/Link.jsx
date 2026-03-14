@@ -41,10 +41,10 @@ const Link = ({LinkIcon = Shell, onDoubleClick, isfocused=false, LinkName = "", 
 
 
     return (
-        <motion.div {...props} drag dragElastic={0} dragMomentum={false} onDoubleClick={onDoubleClick} className={" text-white cursor-pointer aspect-square h-16 left-1.25 flex flex-col items-center text-center text-[12px] "}>
+        <motion.div {...props} drag dragElastic={0} dragMomentum={false} onDoubleClick={onDoubleClick} className={"relative text-white cursor-pointer aspect-square h-16 left-1.25 flex flex-col items-center text-center text-[12px] "}>
             <div className={(isfocused ? " ": "") + " "}><Image unoptimized src={LinkIcon} alt="" quality={100} className={(isfocused ? "opacity-90 ": "") + " p-1 pointer-events-none h-12 w-12"}/></div>
             <span className={(isfocused ? "bg-blue-900 text-white -py-1 px-1 " : textClassName) + " font-extralight"}>{LinkName}</span>
-            <Image src={Overlay} alt="" unoptimized quality={100} className="p-1 fixed pointer-events-none"/>
+            <Image src={Overlay} alt="" unoptimized quality={100} className="p-1 absolute pointer-events-none"/>
         </motion.div>
     );
 }

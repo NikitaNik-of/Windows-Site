@@ -39,6 +39,7 @@ export default function Home() {
         setStartActive(0);
       }}
     >
+      <title>NikitaNik_OS | User: deltacraft</title>
       <Desktop WindowsList={WindowsList} setWindowsList={setWindowsList} linkList={linkList} Active={Active} setActive={setActive}/>
       <StartMenu startActive={startActive} setStartActive={setStartActive} WindowsList={WindowsList} Active={Active} setActive={setActive}/>
     </main>
