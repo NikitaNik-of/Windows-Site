@@ -30,10 +30,25 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
     setWindowsList(copyList)    
   }
 
+  function openImageWindows(ImageName = "", Path = "C:/FuckedYourMom", imgName = "Bliss") {
+     
+    var copyList = [...WindowsList]
+    var indexFound = copyList.findIndex(element => element[8] == "size-win-image")
+    // console.log(indexFound, copyList[indexFound])
+    if (WindowsList[indexFound][4]) {
+        setActive(indexFound)
+    }
+    setImageName(imgName)
+    copyList[indexFound][4] = true
+    copyList[indexFound][1] = ImageName + " | Просмотр изображений NikitaNik_OS"
+    copyList[indexFound][6] = Path
+    setWindowsList(copyList)
+  }
+
   function OpenWin(id) {
     var copyList = [...WindowsList]
     var indexFound = copyList.findIndex(item => item[0] == id)
-    console.log(indexFound, id, copyList)
+    // console.log(indexFound, id, copyList)
     copyList[indexFound][4] = true
     if (WindowsList[indexFound][4]) {
         setActive(indexFound)
@@ -56,6 +71,7 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
 
   const constraintsRef = useRef(null);
   const [FocusedIcon, setFocusedIcon] = useState(-1);
+  const [imageName, setImageName] = useState("")
   const router = useRouter();
 
   return (
@@ -92,6 +108,7 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
           <Window
             classNameContent="flex items-start p-1 space-x-2"
             dragConstraints={constraintsRef}
+            openImageWindows={openImageWindows}
             winID = {wind[0]}
             img={wind[2]}
             key={i}
@@ -103,6 +120,7 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
             footer={wind[6]}
             footer2={wind[7]}
             size={wind[8]}
+            imgViewer={imageName}
           >
             <WinButton onClick={() => {CloseWin(wind[0])}}>Hello</WinButton>
             <WinButton>OK</WinButton>

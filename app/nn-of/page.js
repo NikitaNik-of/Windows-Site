@@ -39,6 +39,7 @@ export default function Home() {
     [2, "Now | Я сейчас...", Note, Note_sm, false, "-translate-x-[350px] translate-y-[200px]", "Обновлено " + settings.dateUpdate, null, "size-win-now"],
     [3, "Интернет-кнопки", Internet_sm, Internet_sm, false, "translate-x-[100px] translate-y-[300px]", null, null, "size-win-buttons"],
     [4, "Арт-галерея", Art_sm, Art_sm, false, "-translate-x-[200px] translate-y-[100px]", "3 objects", "Мой сайт", "size-win-arts"],
+    [20, "Просмотр изображений NikitaNik_OS", Shell, Shell, false, "translate-x-[0px] translate-y-[300px]", null, null, "size-win-image"],
   ]);
   const [linkList, setLinkList] = useState([
     [0, "Обо мне", User, "win", 0],

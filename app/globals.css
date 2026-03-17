@@ -119,8 +119,13 @@ body {
 }
 
 .size-win-arts {
-  height: 500px; 
+  height: 500px;
   width: 650px;
+}
+
+.size-win-image {
+  height: 550px;
+  width: 700px;
 }
 
 #link {
