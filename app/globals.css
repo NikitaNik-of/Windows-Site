@@ -45,10 +45,10 @@ body {
   --shadow-w98-g-sm: -1px -1px 0px 0px rgba(135, 135, 135, 0.9) inset;
   --shadow-w98-g-in: 1px 1px 0px 0px rgba(135, 135, 135, 0.9) inset;
 
-  --shadow-w98-def: -1px -1px 0px 0px #404040 inset, 1px 1px 0px 0px #ffffff inset, -2px -2px 0px 0px #808080 inset, 2px 2px 0px 0px #eceae7 inset;
+  --shadow-w98-def: -1px -1px 0px 0px #404040 inset, 1px 1px 0px 0px #eceae7 inset, -2px -2px 0px 0px #808080 inset, 2px 2px 0px 0px #ffffff inset;
   --shadow-w98-pressed: -1px -1px 0px 0px #ffffff inset, 1px 1px 0px 0px #404040 inset, -2px -2px 0px 0px #eceae7 inset, 2px 2px 0px 0px #808080 inset;
   --shadow-w98-border: -1px -1px 0px 0px #ffffff inset, 1px 1px 0px 0px #808080 inset, -2px -2px 0px 0px #808080 inset, 2px 2px 0px 0px #ffffff inset;
-  --shadow-w98-tabdef: -1px 0px 0px 0px #404040 inset, 1px 1px 0px 0px #ffffff inset, -2px 0px 0px 0px #808080 inset, 2px 2px 0px 0px #eceae7 inset;
+  --shadow-w98-tabdef: -1px 0px 0px 0px #404040 inset, 1px 1px 0px 0px #eceae7 inset, -2px 0px 0px 0px #808080 inset, 2px 2px 0px 0px #ffffff inset;
 
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
   --background-image-gradient-conic: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
@@ -79,8 +79,8 @@ body {
 }
 
 .size-win-about {
-  height: 300px;
-  width: 450px;
+  height: 400px;
+  width: 650px;
 }
 
 .size-win-links {
@@ -104,8 +104,8 @@ body {
 }
 
 .size-win-now {
-  height: 500px;
-  width: 700px;
+  height: 450px;
+  width: 600px;
 }
 
 .size-win-buttons {

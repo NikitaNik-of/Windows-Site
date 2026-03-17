@@ -4,8 +4,11 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import artData from "./../../assets/api/arts.json";
+
 import ImageFile from "@/app/assets/images/image_file.png";
 import ArtBucket from "@/app/assets/images/art_bucket.png";
+
 
 
 const WCGallery = ({ openImageWindows }) => {
@@ -13,6 +16,7 @@ const WCGallery = ({ openImageWindows }) => {
     setFocusedIcon(id);
   }
 
+  const [artCollectionName, setArtCollectionName] = useState("artGallery");
   const constraintsRef = useRef(null);
   const [FocusedIcon, setFocusedIcon] = useState(-1);
 
@@ -20,7 +24,7 @@ const WCGallery = ({ openImageWindows }) => {
     <div className="p-0.5 w-full h-full flex flex-col gap-1">
       <div className="p-1 shadow-w98-border flex items-center">
         <div className="px-1 select-none">Адрес</div>
-        <div className="grow shadow-w98-pressed bg-white p-0.5 mr-1">C:/Users/nn_of/Pictures/Arts</div>
+        <div className="grow shadow-w98-pressed bg-white p-0.5 mr-1">{artData[artCollectionName].path}</div>
       </div>
       <div
         className="p-0.5 shadow-w98-pressed grow bg-white grid grid-cols-[200px_1fr]"
@@ -40,22 +44,22 @@ const WCGallery = ({ openImageWindows }) => {
               + " overflow-y-scroll"
           }
           >
-          {[0, 1, 2, 3, 4, 5, 6, 7].map((item) => {
+          {artData[artCollectionName].arts.map((item, i) => {
             return (
               <Link
                 LinkIcon={ImageFile}
                 dragConstraints={constraintsRef}
-                key={item}
-                id={item}
+                key={item.fileName}
+                id={item.fileName}
                 textClassName="text-black"
-                isfocused={FocusedIcon == item}
+                isfocused={FocusedIcon == item.fileName}
                 onClick={() => {
-                  mouseClick(item);
+                  mouseClick(item.fileName);
                 }}
                 onDoubleClick={() => {
-                  openImageWindows("Art_" + (item + 1) + ".png", );
+                  openImageWindows(i, artCollectionName, item.fileName, artData[artCollectionName].path);
                 }}
-                LinkName={"Art_"+ (item + 1) + ".png"}
+                LinkName={item.fileName}
               />
             );
           })}

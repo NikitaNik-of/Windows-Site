@@ -25,7 +25,7 @@ const Window = ({
   winID,
   navButtons = [1, 0, 2],
   openImageWindows,
-  imgName,
+  imgViewer,
   ...props
 }) => {
   function WindowHead(foc) {
@@ -43,7 +43,7 @@ const Window = ({
       dragControls={dragControls}
       dragListener={false}
       onMouseDown={onClick}
-      onClickCapture={onClick}
+      // onClickCapture={onClick}
       dragMomentum={false}
       className={(isWinFocused ? "z-10" : "z-0") + " cursor-default " + className}
     >
@@ -76,18 +76,18 @@ const Window = ({
             ) : winID == 11 ? (
               <DCPlayers />
             ) : winID == 20 ? (
-              <ImageViewer img={imgName}/>
+              <ImageViewer imgData={imgViewer} openImageWindows={openImageWindows}/>
             ) : (
               children
             )}
           </div>
           {footer2 != null ? (
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 gap-0.5 p-0.5">
               <div className="shadow-w98-border py-0.5 h-6 px-1 text-sm">{footer}</div>
               <div className="shadow-w98-border py-0.5 h-6 px-1 text-sm">{footer2}</div>
             </div>
           ) : footer != null ? (
-            <div className="shadow-w98-border py-0.5 h-6 px-1 text-sm">{footer}</div>
+            <div className="shadow-w98-border m-0.5 py-0.5 h-6 px-1 text-sm">{footer}</div>
           ) : null}
         </div>
       </div>

@@ -9,12 +9,12 @@ const Tabs = ({ tabList = ["Tab 1", "Tab 2", "Tab 4"], tabContentList = ["a", "Ð
 
   return (
     <div className={"flex flex-col " + className}>
-      <div className="flex -mb-0.5 z-10">
+      <div className="flex -mb-0.5 gap-px z-10">
         {tabList.map((tab, i) => (
           <WinButton onClick={() => selectTab(i)} key={i} state={curTab == i ? "tabSel" : "tab"}>{tab}</WinButton>
         ))}
       </div>
-      <div className="shadow-w98-def p-2 grow">
+      <div className="shadow-w98-def p-1 grow">
         {tabContentList.map((tabCont, i) => (
           (curTab == i) ? <div key={i} className="h-full">{tabCont}</div> : null
         ))}
