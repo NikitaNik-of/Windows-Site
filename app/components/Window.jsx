@@ -60,7 +60,7 @@ const Window = ({ closeWin, size = "size-win-default", footer = null, footer2 = 
               {footer2}
             </div>
           </div> :
-          footer != null ? <div className="shadow-w98-pressed py-0.5 h-6 px-1 text-sm">
+          footer != null ? <div className="shadow-w98-border py-0.5 h-6 px-1 text-sm">
             {footer}
           </div> : null}
         </div>
