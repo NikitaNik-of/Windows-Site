@@ -8,7 +8,7 @@ import ImageFile from "@/app/assets/images/image_file.png";
 import ArtBucket from "@/app/assets/images/art_bucket.png";
 
 
-const WCGallery = () => {
+const WCGallery = ({ openImageWindows }) => {
   function mouseClick(id) {
     setFocusedIcon(id);
   }
@@ -51,6 +51,9 @@ const WCGallery = () => {
                 isfocused={FocusedIcon == item}
                 onClick={() => {
                   mouseClick(item);
+                }}
+                onDoubleClick={() => {
+                  openImageWindows("Art_" + (item + 1) + ".png", );
                 }}
                 LinkName={"Art_"+ (item + 1) + ".png"}
               />

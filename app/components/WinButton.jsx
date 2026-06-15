@@ -74,20 +74,20 @@ const WinButton = ({ img, state = "default", className, children, onClick, onMou
 
     case "bar":
       return (
-        <div onClick={onClick} className={"active:shadow-w98-pressed active:pt-0.5 active:pl-0.5 bg-[#c2c2c2] shadow-w98-def cursor-pointer " + className}>
+        <div onClick={onClick} className={"text-nowrap active:shadow-w98-pressed active:pt-0.5 active:pl-0.5 bg-[#c2c2c2] shadow-w98-def cursor-pointer " + className}>
           <div className="px-2 py-px w-full h-full flex items-center">
             <Image alt="" src={img} height={16} className="mr-1" />
-            <div {...props}>{children}</div>
+            <div className="text-ellipsis overflow-hidden" {...props}>{children}</div>
           </div>
         </div>
       );
 
     case "barIn":
       return (
-        <div onClick={onClick} className={"bg-[#e6e6e6] shadow-w98-pressed cursor-default " + className}>
+        <div onClick={onClick} className={"text-nowrap bg-[#e6e6e6] shadow-w98-pressed cursor-default " + className}>
           <div className="px-2 py-px w-full h-full flex items-center">
             <Image src={img} alt="" height={16} className="mr-1" />
-            <div {...props}>{children}</div>
+            <div className="text-ellipsis overflow-hidden" {...props}>{children}</div>
           </div>
         </div>
       );
