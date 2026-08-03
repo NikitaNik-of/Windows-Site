@@ -4,12 +4,30 @@ import WinHeaderButtons from "./WinHeaderButtons";
 import Links from "./WinContent/WCLinks";
 import WCAbout from "./WinContent/WCAbout";
 import DCPlayers from "./WinContent/DCPlayers";
-import WCNow from "./WinContent/WCNow"; 
+import WCNow from "./WinContent/WCNow";
 import WCButtons from "./WinContent/WCButtons";
 import DCAbout from "./WinContent/DCAbout";
 import WCGallery from "./WinContent/WCGallery";
+import ImageViewer from "./ImageViewer";
 
-const Window = ({ closeWin, size = "size-win-default", footer = null, footer2 = null, isWinFocused, img, onClick, titleName = "Приложение", className, classNameContent, children, winID, navButtons = [1, 0, 2], ...props }) => {
+const Window = ({
+  closeWin,
+  size = "size-win-default",
+  footer = null,
+  footer2 = null,
+  isWinFocused,
+  img,
+  onClick,
+  titleName = "Приложение",
+  className,
+  classNameContent,
+  children,
+  winID,
+  navButtons = [1, 0, 2],
+  openImageWindows,
+  imgName,
+  ...props
+}) => {
   function WindowHead(foc) {
     if (foc) {
       return "from-[#000080] to-[#0884CE]";
@@ -43,26 +61,34 @@ const Window = ({ closeWin, size = "size-win-default", footer = null, footer2 = 
             <WinHeaderButtons navButtons={navButtons} closeWin={closeWin} winID={winID} />
           </div>
           <div className={classNameContent + " grow text-sm overflow-y-auto select-text"} draggable={false}>
-            {winID == 0 ? <WCAbout />
-            : winID == 1 ? <Links />
-            : winID == 2 ? <WCNow />
-            : winID == 3 ? <WCButtons />
-            : winID == 4 ? <WCGallery />
-            : winID == 10 ? <DCAbout />
-            : winID == 11 ? <DCPlayers/>
-            : children}
+            {winID == 0 ? (
+              <WCAbout />
+            ) : winID == 1 ? (
+              <Links />
+            ) : winID == 2 ? (
+              <WCNow />
+            ) : winID == 3 ? (
+              <WCButtons />
+            ) : winID == 4 ? (
+              <WCGallery openImageWindows={openImageWindows}/>
+            ) : winID == 10 ? (
+              <DCAbout />
+            ) : winID == 11 ? (
+              <DCPlayers />
+            ) : winID == 20 ? (
+              <ImageViewer img={imgName}/>
+            ) : (
+              children
+            )}
           </div>
-          {footer2 != null ? <div className="grid grid-cols-2">
-            <div className="shadow-w98-border py-0.5 h-6 px-1 text-sm">
-              {footer}
+          {footer2 != null ? (
+            <div className="grid grid-cols-2">
+              <div className="shadow-w98-border py-0.5 h-6 px-1 text-sm">{footer}</div>
+              <div className="shadow-w98-border py-0.5 h-6 px-1 text-sm">{footer2}</div>
             </div>
-            <div className="shadow-w98-border py-0.5 h-6 px-1 text-sm">
-              {footer2}
-            </div>
-          </div> :
-          footer != null ? <div className="shadow-w98-pressed py-0.5 h-6 px-1 text-sm">
-            {footer}
-          </div> : null}
+          ) : footer != null ? (
+            <div className="shadow-w98-border py-0.5 h-6 px-1 text-sm">{footer}</div>
+          ) : null}
         </div>
       </div>
     </motion.div>
