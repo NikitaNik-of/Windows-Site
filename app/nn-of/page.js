@@ -18,6 +18,7 @@ import Net_sm from "./../assets/images/net_sm.png"
 import Note_sm from "./../assets/images/note_sm.png"
 import Internet_sm from "./../assets/images/internet_sm.png"
 import Art_sm from "./../assets/images/paint_sm.png"
+import ImageView from "./../assets/images/image_view.png"
 
 // images links
 import Shell from "./../assets/images/shell.png"
@@ -34,12 +35,12 @@ import Art from "./../assets/images/paint.png"
 
 export default function Home() {
   const [WindowsList, setWindowsList] = useState([
-    [0, "Обо мне", User, User, false, "-translate-x-[250px] translate-y-[70px]", "© 2022-2026 NikitaNik_of", "Версия сайта: v" + settings.version, "size-win-about"],
+    [0, "Обо мне", User, User, true, "-translate-x-[250px] translate-y-[70px]", "© 2022-2026 NikitaNik_of", "Версия сайта: v" + settings.version, "size-win-about"],
     [1, "Ссылки", Net, Net, false, "translate-x-[300px] translate-y-[150px]", null, null, "size-win-links"],
     [2, "Now | Я сейчас...", Note, Note_sm, false, "-translate-x-[350px] translate-y-[200px]", "Обновлено " + settings.dateUpdate, null, "size-win-now"],
     [3, "Интернет-кнопки", Internet_sm, Internet_sm, false, "translate-x-[100px] translate-y-[300px]", null, null, "size-win-buttons"],
     [4, "Арт-галерея", Art_sm, Art_sm, false, "-translate-x-[200px] translate-y-[100px]", "3 objects", "Мой сайт", "size-win-arts"],
-    [20, "Просмотр изображений NikitaNik_OS", Shell, Shell, false, "translate-x-[0px] translate-y-[300px]", null, null, "size-win-image"],
+    [20, "Просмотр изображений NikitaNik_OS", ImageView, ImageView, false, "translate-x-[0px] translate-y-[300px]", null, null, "size-win-image"],
   ]);
   const [linkList, setLinkList] = useState([
     [0, "Обо мне", User, "win", 0],

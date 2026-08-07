@@ -6,7 +6,7 @@ import Art from "@/app/assets/images/artdc3.png"
 const DCAbout = () => {
   return (
     <div className='space-y-2'>
-        <div className='p-2 shadow-w98-pressed'>
+        <div className='p-2 shadow-w98-pressed bg-white'>
             <Image className='mx-auto' height={230} alt="" src={Art}/>
             <div className='italic text-stone-500 text-right text-xs'>artwork made by <a href="https://t.me/PnovaQ" id='link'>Nova</a></div>
         </div>

@@ -14,7 +14,7 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
   }
 
   function emptyClick() {
-    // console.log("huh", Active);
+    // console.log("empty", Active);
     setFocusedIcon(-1);
     setActive(-1);
   }
@@ -30,18 +30,18 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
     setWindowsList(copyList)    
   }
 
-  function openImageWindows(ImageName = "", Path = "C:/FuckedYourMom", imgName = "Bliss") {
+  function openImageWindows(imgIndex = 0, imgCollection = "", imageName = "", path = "") {
      
     var copyList = [...WindowsList]
     var indexFound = copyList.findIndex(element => element[8] == "size-win-image")
-    // console.log(indexFound, copyList[indexFound])
-    if (WindowsList[indexFound][4]) {
-        setActive(indexFound)
-    }
-    setImageName(imgName)
+    //console.log(indexFound, copyList[indexFound])
+    setImageData([imgIndex, imgCollection])
     copyList[indexFound][4] = true
-    copyList[indexFound][1] = ImageName + " | Просмотр изображений NikitaNik_OS"
-    copyList[indexFound][6] = Path
+    copyList[indexFound][1] = imageName + " | Просмотр изображений NikitaNik_OS"
+    copyList[indexFound][6] = path + "/" + imageName
+    if (WindowsList[indexFound][4]) {
+        setActive(copyList[indexFound][0])
+    }
     setWindowsList(copyList)
   }
 
@@ -51,7 +51,7 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
     // console.log(indexFound, id, copyList)
     copyList[indexFound][4] = true
     if (WindowsList[indexFound][4]) {
-        setActive(indexFound)
+        setActive(copyList[indexFound][0])
     }
     setWindowsList(copyList)    
   }
@@ -71,12 +71,12 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
 
   const constraintsRef = useRef(null);
   const [FocusedIcon, setFocusedIcon] = useState(-1);
-  const [imageName, setImageName] = useState("")
+  const [imageData, setImageData] = useState([0, ""])
   const router = useRouter();
 
   return (
     <motion.div
-      onClickCapture={emptyClick}
+      onClick={(e) => {if (e.target.parentElement.id == "desktop") emptyClick()}}
       ref={constraintsRef}
       id="desktop"
       className="flex flex-col bg-transparent relative w-full min-h-full grow items-center"
@@ -88,6 +88,7 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
               key={item[0]}
               dragConstraints={constraintsRef}
               onClick={() => {
+                
                 mouseClick(item[0]);
               }}
               onDoubleClick={() => {
@@ -114,13 +115,13 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
             key={i}
             isWinFocused={isWinActive(Active, wind[0])}
             titleName={wind[1]}
-            onClick={() => {setActive(wind[0])}}
+            onClick={(e) => {setActive(wind[0])}}
             className={wind[4] ? (" absolute " + wind[5]) : "  hidden"}
             closeWin={CloseWin}
             footer={wind[6]}
             footer2={wind[7]}
             size={wind[8]}
-            imgViewer={imageName}
+            imgViewer={imageData}
           >
             <WinButton onClick={() => {CloseWin(wind[0])}}>Hello</WinButton>
             <WinButton>OK</WinButton>

@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 // buttons links
 import button from "./../../../public/badge.gif"
+import sacredos from "./../../assets/badges/SacredOS.png"
 
 const WCButtons = () => {
   return (
@@ -11,11 +12,13 @@ const WCButtons = () => {
               Это окно посвящено тем самым кнопкам из 1990-х, которые связы-вали разные сайты.
               Именно с помощью них раньше знакомились с новыми людьми, и именно этот процесс назывался <span className="font-bold italic">"серфингом"</span>.
               Добавляли кнопки друзей, знакомых, просто интересные сайты, формируя своеобразную сеть.
-            <div className="mt-4 mb-1 flex justify-center text-[12px]">
+            <div className="h-px mt-3 mx-6 bg-gray-500"></div>
+            <div className="h-px mb-3 mx-6 bg-white"></div>
+            <div className="my-1 flex justify-center text-[12px]">
               <a href="https://nn-of.ru" target="_blank" className="my-auto mx-2"><Image src={button} alt=""/></a>
               <div className="my-auto ml-1 text-left max-w-[75%] italic">
                 Вот кнопка с ссылкой на мой сайт, которую вы можете использовать у себя где-нибудь!
-                <div className="p-1 shadow-w98-pressed bg-white font-mono not-italic">
+                <div className="p-1 my-1 shadow-w98-pressed bg-white font-mono not-italic">
                   <span className="text-[10px] line-clamp-5 whitespace-nowrap overflow-x-scroll pb-2">{'<a href="https://nn-of.ru" target="_blank">'} <br/>
                       &emsp;{'<img src="https://nn-of.ru/badge.gif" width="88" height="31" alt="Cайт NikitaNik_of" style="border:0;"/>'}<br/>{
                   '</a>'}</span>
@@ -30,7 +33,10 @@ const WCButtons = () => {
         </div>
         <div className="font-bold text-lg mt-2 mb-1">Кнопки классных сайтов</div>
         <div className="flex flex-wrap gap-0.5">
+          <a href="https://humanfinny.neocities.org"><img src="https://humanfinny.neocities.org/humanfinny_88x31_3.jpg"/></a>
           <a href="https://simone.computer/" target="_blank"><img width="88" height="31" src={"https://simone.computer/static/media/88x31.99974d79.gif"} alt=""/></a>
+          <a href="https://sacred.neocities.org/" target="_blank"><Image width="88" height="31" src={sacredos} alt=""/></a>
+          <a href="http://mileshouse.neocities.org" alt="Kiophen"><img src="https://mileshouse.neocities.org/img/kiophen8831.gif"/></a>
         </div>
     </div>
   )
