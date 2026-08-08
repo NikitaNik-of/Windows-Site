@@ -14,10 +14,10 @@ import Shutdown from '../assets/images/shutdown.png';
 
 Router
 
-const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}) => {
+const MobStartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}) => {
 
   return (
-    <div className="bg-[#c2c2c2] shadow-w98-w w-full md:flex p-1 z-50 hidden relative">
+    <div className="bg-[#c2c2c2] shadow-w98-w w-full md:hidden flex p-1 z-50 relative">
         <WinButton state={startActive == 0 ? "startbtn" : "startbtnIn"} onClick={() => setStartActive(Math.abs(startActive - 1))} className="font-bold subpixel-antialiased">
           Пуск
         </WinButton>
@@ -67,20 +67,17 @@ const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}
         )}
 
         <div className="w-0.5 mx-1 bg-[#999999]" />
-        <div className="flex-1 flex space-x-1">
+        <div className="flex-1 flex space-x-1 text-[12px]">
           {WindowsList.map((wind, i) => (
-            <WinButton key={i} img={wind[3]} state={Active == wind[0] ? "barIn" : "bar"} onClick={() => setActive(wind[0])} className={(wind[4] ? " " : "hidden ") + " w-52"}>
+            <WinButton key={i} img={wind[3]} state={Active == wind[0] ? "barIn" : "bar"} onClick={() => setActive(wind[0])} className={(wind[4] ? " " : "hidden ") + " w-22"}>
               {wind[1]}
             </WinButton>
           ))}
         </div>
 
-        <WinButton state="in" className="w-auto space-x-0.5">
+        <WinButton state="in" className="w-auto">
           <Image alt="" className="" title="Bitchass" src={ToolsGear} height={20}/>
-          <Image alt="2" src={ToolsGear} height={20}/>
-          <Image alt="3" src={ToolsGear} height={20}/>
-          <Image alt="balls" src={ToolsGear} height={20}/>
-          <div className="ml-2 w-14 text-sm grow my-auto text-center">
+          <div className="ml-0 w-0 text-sm grow my-auto text-center">
             {/* <Clock format={"HH:mm:ss"} style={{ fontSize: "1em" }} ticking={true} noSsr /> */}
           </div>
         </WinButton>
@@ -88,4 +85,4 @@ const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}
   )
 }
 
-export default StartMenu
+export default MobStartMenu

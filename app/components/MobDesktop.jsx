@@ -7,7 +7,7 @@ import Link from "./Link";
 import WinButton from "./WinButton";
 import Shell from "./../assets/images/shell.png"
 
-const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) => {
+const MobDesktop = ({ WindowsList, setWindowsList, Active, setActive }) => {
   function isWinActive(cur, id) {
     if (cur == id) return true;
     else false;
@@ -75,66 +75,36 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
   const router = useRouter();
 
   return (
-    <motion.div
+    <div
       onClick={(e) => {if (e.target.parentElement.id == "desktop") emptyClick()}}
-      ref={constraintsRef}
       id="desktop"
-      className="hidden md:flex flex-col bg-transparent relative w-full min-h-full grow items-center "
+      className="md:hidden flex flex-col bg-transparent relative w-full min-h-full grow items-center"
     >
-      <div className="left-1 top-2 absolute self-start grid grid-rows-[repeat(auto-fill,85px)] grid-cols-[repeat(auto-fill,85px)] grid-flow-col gap-1 w-full h-full">
-        {linkList.map((item, index) => {
-          return (
-            <Link
-              key={item[0]}
-              dragConstraints={constraintsRef}
-              onClick={() => {
-                
-                mouseClick(item[0]);
-              }}
-              onDoubleClick={() => {
-                  LinkClicked(item[0], item[3], item[4]);
-              }}
-              isfocused={FocusedIcon == item[0] ? true : false}
-              LinkIcon={(item[2] != null) ? item[2] : Shell}
-              LinkName={item[1]}
-              id={item[0]}
-            ></Link>
-          );
-        })}
-      </div>
-
-
-      <div className="grow flex justify-center w-full h-0 ">
+      <div className="grow grid grid-rows-[190px_4fr_5fr] justify-between w-full h-0">
         {WindowsList.map((wind, i) => (
           <Window
-            classNameContent="flex items-start p-1 space-x-2"
-            dragConstraints={constraintsRef}
-            openImageWindows={openImageWindows}
+            classNameContent="flex items-start p-1 space-x-2 text-[12px]"
+            navButtons={[0, 0, 0]}
+            drag={false}
             winID = {wind[0]}
             img={wind[2]}
             key={i}
             isWinFocused={isWinActive(Active, wind[0])}
             titleName={wind[1]}
             onClick={(e) => {setActive(wind[0])}}
-            className={wind[4] ? (" absolute " + wind[5]) : "  hidden"}
-            closeWin={CloseWin}
+            className={wind[5]}
             footer={wind[6]}
             footer2={wind[7]}
-            size={wind[8]}
-            imgViewer={imageData}
-          >
-            <WinButton onClick={() => {CloseWin(wind[0])}}>Hello</WinButton>
-            <WinButton>OK</WinButton>
-            <WinButton state="disabled">Hello</WinButton>
-          </Window>
+            size={"h-0"}
+          />
         ))}
       </div>
 
       {/* <Window dragConstraints={constraintsRef} isWinFocused={isWinActive(Active, 0)} onTapStart={() => setActive(0)} className=""></Window>
             <Window dragConstraints={constraintsRef} isWinFocused={isWinActive(Active, 1)} onTapStart={() => setActive(1)} className=""></Window>
             <Window dragConstraints={constraintsRef} isWinFocused={isWinActive(Active, 2)} onTapStart={() => setActive(2)} className=""></Window> */}
-    </motion.div>
+    </div>
   );
 };
 
-export default Desktop;
+export default MobDesktop;

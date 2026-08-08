@@ -30,6 +30,8 @@ import Note from "./../assets/images/note.png"
 import WebPage from "./../assets/images/web_file.png"
 import Internet from "./../assets/images/internet.png"
 import Art from "./../assets/images/paint.png"
+import MobDesktop from "../components/MobDesktop";
+import MobStartMenu from "../components/MobStartMenu";
 
 // import user from "./../public/user.png";
 
@@ -50,6 +52,11 @@ export default function Home() {
     [4, "Арт-галерея", Art, "win", 4],
     [9, "Прошлый сайт", WebPage, "link", "https://nn-of.ru/"],
   ]);
+  const [mobWindowsList, setMobWindowsList] = useState([
+    [0, "Обо мне", User, User, true, "", "© 2022-2026 NikitaNik_of", "Версия сайта: v" + settings.version, "size-win-about"],
+    [1, "Ссылки", Net, Net, true, "", null, null, "size-win-links"],
+    [2, "Now | Я сейчас...", Note, Note_sm, true, "", "Обновлено " + settings.dateUpdate, null, "size-win-now"]
+  ]);
   const [Active, setActive] = useState(0);
   const [startActive, setStartActive] = useState(0);
 
@@ -63,6 +70,10 @@ export default function Home() {
       <title>NikitaNik_OS | User: nn_of</title>
       <Desktop WindowsList={WindowsList} setWindowsList={setWindowsList} linkList={linkList} Active={Active} setActive={setActive}/>
       <StartMenu startActive={startActive} setStartActive={setStartActive} WindowsList={WindowsList} Active={Active} setActive={setActive}/>
+
+      <MobDesktop WindowsList={mobWindowsList} setWindowsList={setMobWindowsList} Active={Active} setActive={setActive}/>
+      <MobStartMenu startActive={startActive} setStartActive={setStartActive} WindowsList={mobWindowsList} Active={Active} setActive={setActive}/>
+
     </main>
   );
 }

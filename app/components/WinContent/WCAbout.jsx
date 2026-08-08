@@ -4,7 +4,7 @@ import Tabs from '../Tabs'
 const WCAbout = () => {
   return (
     <div className='p-0.5'>
-        <p className="wrap-break-word grow space-y-4">
+        <div className="wrap-break-word grow space-y-4">
           <div className="font-bold text-base text-center p-2 shadow-w98-border mx-12 my-3">Добро пожаловать на мою веб-страницу и я рад, что ВЫ заглянули в мой уголок в громадном Интернете!</div>
           <div className='px-4'>
             Меня зовут Никита, я математик-программист из южной России. Хоть моя специальность никак не связана с творчеством,
@@ -15,7 +15,7 @@ const WCAbout = () => {
             На этом пользователе вы найдете всё связанное с автором этого сайта (ссылки, цели и почти ничего другого), а также небольшую арт-галлерею. Не стесняйтесь делиться сайтом в своих точках влияния и рад буду вашим комментариям.
           </div>
 
-        </p>
+        </div>
 
         {/* <div>
             <Tabs className="h-32"/>
