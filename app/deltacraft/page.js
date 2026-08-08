@@ -19,6 +19,8 @@ import User from "./../assets/images/user.png";
 import Shell from "./../assets/images/shell.png"
 import Users from "./../assets/images/users.png"
 import Server from "./../assets/images/server.png"
+import MobDesktop from "../components/MobDesktop";
+import MobStartMenu from "../components/MobStartMenu";
 
 export default function Home() {
   const [WindowsList, setWindowsList] = useState([
@@ -28,6 +30,9 @@ export default function Home() {
   const [linkList, setLinkList] = useState([
     [0, "О сервере", Server, "win", 10],
     [1, "Игроки", Users, "win", 11]
+  ]);
+  const [mobWindowsList, setMobWindowsList] = useState([
+    [10, "О сервере", Server, Server, true, "row-span-3", null, null, "size-win-dc-about"],
   ]);
   const [Active, setActive] = useState(0);
   const [startActive, setStartActive] = useState(0);
@@ -42,6 +47,9 @@ export default function Home() {
       <title>NikitaNik_OS | User: deltacraft</title>
       <Desktop WindowsList={WindowsList} setWindowsList={setWindowsList} linkList={linkList} Active={Active} setActive={setActive}/>
       <StartMenu startActive={startActive} setStartActive={setStartActive} WindowsList={WindowsList} Active={Active} setActive={setActive}/>
+
+      <MobDesktop WindowsList={mobWindowsList} setWindowsList={setMobWindowsList} Active={Active} setActive={setActive}/>
+      <MobStartMenu startActive={startActive} setStartActive={setStartActive} WindowsList={mobWindowsList} Active={Active} setActive={setActive}/>
     </main>
   );
 }

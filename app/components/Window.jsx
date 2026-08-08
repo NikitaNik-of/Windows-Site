@@ -26,6 +26,7 @@ const Window = ({
   navButtons = [1, 0, 2],
   openImageWindows,
   imgViewer,
+  drag = true,
   ...props
 }) => {
   function WindowHead(foc) {
@@ -38,7 +39,7 @@ const Window = ({
   return (
     <motion.div
       {...props}
-      drag
+      drag={drag}
       dragElastic={0}
       dragControls={dragControls}
       dragListener={false}
@@ -47,7 +48,7 @@ const Window = ({
       dragMomentum={false}
       className={(isWinFocused ? "z-10" : "z-0") + " cursor-default " + className}
     >
-      <div className="bg-[#c2c2c2] shadow-w98-def flex-col flex">
+      <div className="bg-[#c2c2c2] shadow-w98-def flex-col flex h-full w-full">
         <div className={"grow flex flex-col w-full p-0.5 " + size}>
           <div
             onPointerDown={(e) => {

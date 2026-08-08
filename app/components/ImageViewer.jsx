@@ -74,7 +74,7 @@ const ImageViewer = ({imgData = [0, ""], openImageWindows}) => {
   return (
     <div className="w-full h-full justify-between">
         <div className="bg-white p-0.5 flex flex-col justify-center h-112 shadow-w98-pressed">
-          <Image src={imageImport(imgData)} alt="" optimize height={415} className="m-auto " />
+          <Image src={imageImport(imgData)} alt="" height={415} className="m-auto " />
           <div className="px-2 text-right italic">
             {getImgData(imgData[0], imgData[1])}
           </div>

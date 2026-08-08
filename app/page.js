@@ -49,7 +49,7 @@ const Login = () => {
         }}
         ref={constraintsRef}
         id="login"
-        className="bg-transparent w-full min-h-full items-center flex justify-center"
+        className="bg-transparent w-full min-h-full items-center hidden md:flex justify-center"
       >
         <Window
           dragConstraints={constraintsRef}
@@ -71,7 +71,7 @@ const Login = () => {
             </div> */}
           </div>
           <div className="text-[12px] italic">
-            Данный сайт не адаптирован для мобильных устройств, просьба используйте нормальный браузер.
+            Просьба используйте нормальный браузер, в мобильной версии обрезано содержание.
           </div>
           <div className="flex justify-between">
             <Image src={nomobile} alt="" />
@@ -87,6 +87,48 @@ const Login = () => {
           </div>
         </Window>
       </motion.div>
+
+      <div className="bg-transparent w-full min-h-full items-center flex md:hidden justify-center">
+        <Window
+          dragConstraints={constraintsRef}
+          img={keys}
+          key={0}
+          drag={false}
+          isWinFocused={isWinActive(Active, 0)}
+          titleName={"Добро пожаловать в NikitaNik_OS 98"}
+          onClick={() => setActive(0)}
+          className={"text-sm"}
+          classNameContent={"flex-col p-4 flex justify-between"}
+          navButtons={[0, 0, 0]}
+          size=" h-85 "
+          footer={"Версия сайта: v" + settings.version}
+        >
+          <div className="space-y-2">
+            <div className=" space-y-1">
+              <div>Выберите пользователя системы:</div>
+              <WinList className="h-20" list={userList} focusedItem={FocusedItem} setFocusedItem={setFocusedItem} />
+            </div>
+            <div className="text-[12px] italic">
+              Данный сайт не адаптирован для мобильных устройств, просьба используйте нормальный браузер.
+            </div>
+            <div className="text-[12px] italic">
+              В мобильной версии доступна половина исходного содержимого.
+            </div>
+          </div>
+          <div className="flex justify-between">
+            <Image src={nomobile} alt="" />
+            <WinButton
+              id="TestToD"
+              onClick={() => {
+                FocusedItem == 0 ? null : goTo(setFocusedD, userList, FocusedItem);
+              }}
+              state={FocusedItem == 0 ? "disabled" : "default"}
+            >
+              Войти
+            </WinButton>
+          </div>
+        </Window>
+      </div>
     </div>
   );
 };
