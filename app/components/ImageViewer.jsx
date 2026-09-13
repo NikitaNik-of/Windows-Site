@@ -9,6 +9,8 @@ import Image1 from "./../assets/images/view/Art_1.png"
 import arbuz from "./../assets/images/view/arbuz.png"
 import fish from "./../assets/images/view/fisherman.png"
 import Image4 from "./../assets/images/view/Art_4.png"
+import Chill from "./../assets/images/view/Chill.png"
+import Chamber_of from "./../assets/images/view/Chamber_of.png"
 import WinButton from './WinButton'
 
 const ImageViewer = ({imgData = [0, ""], openImageWindows}) => {
@@ -33,6 +35,12 @@ const ImageViewer = ({imgData = [0, ""], openImageWindows}) => {
     } else
     if (img == "Art_4.png") {
       return Image4
+    } else
+    if (img == "Chill.png") {
+      return Chill
+    } else
+    if (img == "Chamber_of.png") {
+      return Chamber_of
     } else {
       return bliss
     }

@@ -40,18 +40,19 @@ const WCGallery = ({ openImageWindows }) => {
         </div>
 
         <motion.div ref={constraintsRef}
-          className={"justify-center grid grid-rows-[repeat(auto-fill,85px)] grid-cols-[repeat(auto-fill,65px)] grid-flow-row gap-1 "
+          className={"justify-center grid grid-rows-[repeat(auto-fill,85px)] grid-cols-[repeat(auto-fill,80px)] grid-flow-row gap-1 "
               + " overflow-y-scroll"
           }
           >
           {artData[artCollectionName].arts.map((item, i) => {
             return (
               <Link
+                className=" "
                 LinkIcon={ImageFile}
                 dragConstraints={constraintsRef}
                 key={item.fileName}
                 id={item.fileName}
-                textClassName="text-black"
+                textClassName="text-black "
                 isfocused={FocusedIcon == item.fileName}
                 onClick={() => {
                   mouseClick(item.fileName);

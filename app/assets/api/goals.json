@@ -1,0 +1,67 @@
+{
+    "total": 6,
+    "completed": 0,
+    "rarity":[
+        "common",
+        "rare",
+        "epic",
+        "legendary",
+        "mythical"
+    ],
+    "goals": [
+        {
+            "name": "Вебмастер 2k26",
+            "description": "Завершить разработку этого сайта. Хотя бы основное.",
+            "rarity": "common",
+            "completed": false,
+            "date_completed": "",
+            "progress": 2,
+            "progress_goal": 7
+        },
+        {
+            "name": "Газетная программка канала",
+            "description": "Сделать расписание стримов на Twitch",
+            "rarity": "common",
+            "completed": false,
+            "date_completed": "",
+            "progress": 0,
+            "progress_goal": 1
+        },
+        {
+            "name": "Поколение Z пытается стать Alpha",
+            "description": "Сделать несколько клипов со стримов",
+            "rarity": "rare",
+            "completed": false,
+            "date_completed": "",
+            "progress": 0,
+            "progress_goal": 10
+        },
+        {
+            "name": "Сотка!",
+            "description": "Получить 100 подписчиков в Telegram-канале",
+            "rarity": "rare",
+            "completed": false,
+            "date_completed": "",
+            "progress": 70,
+            "progress_goal": 100
+        },
+        {
+            "name": "Он вернулся?",
+            "description": "Выложить ролик на основной YouTube-канал",
+            "rarity": "legendary",
+            "completed": false,
+            "date_completed": "",
+            "progress": 0,
+            "progress_goal": 1
+        },
+        {
+            "name": "Всё еще достоин.",
+            "description": "Получить 5000 подписчиков на YouTube-канале",
+            "rarity": "mythical",
+            "completed": false,
+            "date_completed": "",
+            "progress": 3298,
+            "progress_goal": 5000
+        }
+    ]
+}

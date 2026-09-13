@@ -7,30 +7,14 @@ import logoYT from '../../assets/logos/youtube.png'
 import logoGH from '../../assets/logos/github.png'
 // import logoBS from '../../assets/logos/bsky.png'
 import Image from 'next/image'
+import Tabs from '../Tabs'
 
 const Links = () => {
+  
   return (
     <div className='p-0.5'>
-      <div>{"Со мной можно лично связаться, но не забудьте представиться. Я незнакомцам не отвечаю, простите :)"}</div>
 
-      <div className='flex flex-wrap justify-center gap-x-2 gap-y-1 m-1 p-3 shadow-w98-pressed'>
-        <WinButton onClick={() => {window.open("https://t.me/NikitaNik_of", "_blank")}}>
-          <div className='flex -mx-2 space-x-1 '>
-            <Image className='w-6 h-6' src={logoTG} alt="" />
-            <div className='text-center my-auto'>Telegram ЛС</div>
-          </div>
-        </WinButton>
-        <WinButton onClick={() => {navigator.clipboard.writeText("@nikitanik_of")}}>
-          <div className='flex -mx-2 space-x-1'>
-            <Image className='w-6 h-6' src={logoDC} alt="" />
-            <div className='text-center my-auto'>@nikitanik_of</div>
-          </div>
-        </WinButton>
-      </div>
-
-      <div className='mt-4'>
-        {"Но меня можно найти в других, более крупных уголках Интеренета. На одних я появляюсь чаще, а вот на ютубе я бываю реже Моддичата..."}
-      </div>
+      <div className='mt-2 mx-2 text-center'>{"Вот где меня можно найти в Интернете:"}</div>
 
       <div className='flex flex-wrap justify-center gap-x-2 gap-y-1 m-1 p-3 shadow-w98-pressed'>
         <WinButton onClick={() => {window.open("https://t.me/nikitanikof", "_blank")}}>
@@ -66,8 +50,8 @@ const Links = () => {
       </div>
 
 
-      <div className='mt-4'>
-        {"У меня так же есть платный контент, для тех, кто любит спойлеры или просто хочет денежно показать свою поддержку. Сейчас мне нечего там показывать, но как только появится, я сообщю в своём ТГК."}
+      <div className='mt-4 mx-2 text-center'>
+        {"У меня так же есть платный контент, если хотите спойлеры или просто поддержать."}
       </div>
 
       <div className='flex flex-wrap justify-center gap-x-2 gap-y-1 m-1 p-3 shadow-w98-pressed'>
@@ -85,9 +69,8 @@ const Links = () => {
         </WinButton>
       </div>
 
-      <div className='mt-4'>
-        {"Этот сайт я держу в открытом репозитории, который вы можете изучить, однако просьба не тырить всё подряд..."}<br/>
-        {"Если есть замечания по сайту, можее создать там проблему."}
+      <div className='mt-4 mx-2 text-center'>
+        {"Этот сайт я держу в открытом репозитории, который вы можете изучить, но не тырить..."}
       </div>
 
       <div className='flex flex-wrap justify-center gap-x-2 gap-y-1 m-1 p-3 shadow-w98-pressed'>
