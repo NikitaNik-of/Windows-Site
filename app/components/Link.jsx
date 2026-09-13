@@ -7,7 +7,7 @@ import Shell from "./../assets/images/shell.png"
 import Overlay from "./../assets/images/overlay_shortcut.png"
 import { useState } from "react";
 
-const Link = ({LinkIcon = Shell, onDoubleClick, isfocused=false, LinkName = "", id, textClassName, ...props}) => {
+const Link = ({LinkIcon = Shell, onDoubleClick, isfocused=false, LinkName = "", id, textClassName, className, ...props}) => {
 
     const [locID, _] = useState([id])
     const [clN, setClN] = useState("")
@@ -41,9 +41,9 @@ const Link = ({LinkIcon = Shell, onDoubleClick, isfocused=false, LinkName = "", 
 
 
     return (
-        <motion.div {...props} drag dragElastic={0} dragMomentum={false} onDoubleClick={onDoubleClick} className={"relative text-white cursor-pointer aspect-square h-16 left-1.25 flex flex-col items-center text-center text-[12px] "}>
+        <motion.div {...props} drag dragElastic={0} dragMomentum={false} onDoubleClick={onDoubleClick} className={"relative text-white cursor-pointer h-16 w-16 left-1.25 flex flex-col items-center text-center text-[11px] " + className}>
             <div className={(isfocused ? " ": "") + " "}><Image unoptimized src={LinkIcon} alt="" quality={100} className={(isfocused ? "opacity-90 ": "") + " p-1 pointer-events-none h-12 w-12"}/></div>
-            <span className={(isfocused ? "bg-blue-900 text-white -py-1 px-1 " : textClassName) + " font-extralight"}>{LinkName}</span>
+            <p className={(isfocused ? "bg-blue-900 text-white -py-1 px-1 -mx-1 " : textClassName) + " wrap-anywhere font-extralight"}>{LinkName}</p>
             <Image src={Overlay} alt="" unoptimized quality={100} className="p-1 absolute pointer-events-none"/>
         </motion.div>
     );

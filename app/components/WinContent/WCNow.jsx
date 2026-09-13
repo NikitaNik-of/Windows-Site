@@ -10,7 +10,7 @@ const WCNow = () => {
         <a href="https://new.nn-of.ru/" target="_blank" id="link">
           Этот сайт
         </a>
-        . Прорабатываю структуру и заполняю информацией. Крайне доволен текущим результатом.
+        . Прорабатываю структуру и заполняю информацией. Крайне доволен текущим результатом. Хочу успеть доделать до первого ролика в 2026.
       </div>
       <div>
         - Принял решение о возсоздании медиа части моей жизни. Тяжело без неё. Но на{" "}
@@ -19,21 +19,25 @@ const WCNow = () => {
         </a>{" "}
         не заходят люди... Жалко, но ладно...
       </div>
-      <div>- Продумываю структуру мероприятий для своего сервера, переделываю свои стрим-оверлеи. Очень нравится создавать интерактивные вещи.</div>
+      <div>- Сделал турнир с кастомными оверлеями и БД. Были косяки - надо исправить</div>
       <div>- Слишком много сижу в телефоне и в YouTube</div>
-      <div>- Зависаю в инди-Интернете</div>
-      <div>- Глажу котика</div>
+      <div>- Зависаю в инди-Интернете. Каждый раз я в шоке, как соцсети ломают представление о людях в Интернете</div>
+      <div>- Разочаровался в онлайн-общении. </div>
+      <div>- Глажу котика. Он сказал: "mrrrr"</div>
     </div>,
   );
   const [tabTwo, setTabTwo] = React.useState(
     <div className="bg-white shadow-w98-pressed p-2">
-      <div>- Жду нового учебного года, ибо универ ждет.</div>
+      <div>- Веду 5 пар в неделю. Очень интересно, точно лучше чем сидеть на них и слушать 67-летнего деда.</div>
+      <div>- Работаем над научным грантом. Программы и гравики goes <span className="italic">brrrrrrrrrr</span></div>
     </div>,
   );
   const [tabThree, setTabThree] = React.useState(
     <div className="bg-white shadow-w98-pressed p-2">
       <div>- Диплом красный получил</div>
       <div>- <span className="font-bold">В аспирантуру прошел!</span> Учимся теперь еще 4 года, так еще и бюджет)))</div>
+      <div>- Учим философию науки и English. Просто ez-clap</div>
+
     </div>,
   );
   const [tabFour, setTabFour] = React.useState(
@@ -46,9 +50,10 @@ const WCNow = () => {
   );
   const [tabFive, setTabFive] = React.useState(
     <div className="bg-white shadow-w98-pressed p-2">
-      <div>- Ачивки.</div>
+      <div className="line-through">- Ачивки.</div>
       <div>- Последние ролики.</div>
-      <div>- Привести в порядок ссылки.</div>
+      <div>- Логотип.</div>
+      <div className="line-through">- Привести в порядок ссылки.</div>
       <div>- Эффекты при активном стриме.</div>
       <div>- FAQ. “what do you use?”.</div>
       <div>- Часы.</div>

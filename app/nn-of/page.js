@@ -19,6 +19,7 @@ import Note_sm from "./../assets/images/note_sm.png"
 import Internet_sm from "./../assets/images/internet_sm.png"
 import Art_sm from "./../assets/images/paint_sm.png"
 import ImageView from "./../assets/images/image_view.png"
+import Star from "./../assets/images/star.png"
 
 // images links
 import Shell from "./../assets/images/shell.png"
@@ -38,10 +39,11 @@ import MobStartMenu from "../components/MobStartMenu";
 export default function Home() {
   const [WindowsList, setWindowsList] = useState([
     [0, "Обо мне", User, User, true, "-translate-x-[250px] translate-y-[70px]", "© 2022-2026 NikitaNik_of", "Версия сайта: v" + settings.version, "size-win-about"],
-    [1, "Ссылки", Net, Net, false, "translate-x-[300px] translate-y-[150px]", null, null, "size-win-links"],
+    [1, "Ссылки", Net, Net, true, "translate-x-[350px] translate-y-[250px]", null, null, "size-win-links"],
     [2, "Now | Я сейчас...", Note, Note_sm, false, "-translate-x-[350px] translate-y-[200px]", "Обновлено " + settings.dateUpdate, null, "size-win-now"],
     [3, "Интернет-кнопки", Internet_sm, Internet_sm, false, "translate-x-[100px] translate-y-[300px]", null, null, "size-win-buttons"],
-    [4, "Арт-галерея", Art_sm, Art_sm, false, "-translate-x-[200px] translate-y-[100px]", "3 objects", "Мой сайт", "size-win-arts"],
+    [4, "Арт-галерея", Art_sm, Art_sm, false, "-translate-x-[200px] translate-y-[100px]", "TODO!!! objects", "Мой сайт", "size-win-arts"],
+    [5, "Достижения 2026", Star, Star, false, "-translate-x-[-200px] translate-y-[300px] w-150", null, null, ""],
     [20, "Просмотр изображений NikitaNik_OS", ImageView, ImageView, false, "translate-x-[0px] translate-y-[300px]", null, null, "size-win-image"],
   ]);
   const [linkList, setLinkList] = useState([
@@ -50,6 +52,7 @@ export default function Home() {
     [2, "Я сейчас...", Note, "win", 2],
     [3, "Интернет-кнопки", Internet, "win", 3],
     [4, "Арт-галерея", Art, "win", 4],
+    [5, "Мои достижения", Star, "win", 5],
     [9, "Прошлый сайт", WebPage, "link", "https://nn-of.ru/"],
   ]);
   const [mobWindowsList, setMobWindowsList] = useState([

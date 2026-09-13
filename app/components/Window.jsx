@@ -9,6 +9,7 @@ import WCButtons from "./WinContent/WCButtons";
 import DCAbout from "./WinContent/DCAbout";
 import WCGallery from "./WinContent/WCGallery";
 import ImageViewer from "./ImageViewer";
+import WCGoals from "./WinContent/WCGoals";
 
 const Window = ({
   closeWin,
@@ -72,6 +73,8 @@ const Window = ({
               <WCButtons />
             ) : winID == 4 ? (
               <WCGallery openImageWindows={openImageWindows}/>
+            ) : winID == 5 ? (
+              <WCGoals />
             ) : winID == 10 ? (
               <DCAbout />
             ) : winID == 11 ? (
