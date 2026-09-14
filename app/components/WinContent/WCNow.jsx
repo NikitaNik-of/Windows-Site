@@ -56,7 +56,7 @@ const WCNow = () => {
       <div className="line-through">- Привести в порядок ссылки.</div>
       <div>- Эффекты при активном стриме.</div>
       <div>- FAQ. “what do you use?”.</div>
-      <div>- Часы.</div>
+      <div className="line-through">- Часы.</div>
     </div>,
   );
 

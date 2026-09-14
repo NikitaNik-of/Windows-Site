@@ -8,7 +8,7 @@ const ProgressBar = ({ current, goal, width = 128, height = 16, barColor, classN
     var blockZones = Math.floor((width - 6) / (height - 5));
 
     var progress = Math.floor((now / goal) * blockZones);
-    console.log(progress, blockZones);
+    // console.log(progress, blockZones);
     
     return(
       <>

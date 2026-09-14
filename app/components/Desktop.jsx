@@ -1,11 +1,12 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Window from "./Window";
 import { motion } from "framer-motion";
 import Link from "./Link";
 import WinButton from "./WinButton";
-import Shell from "./../assets/images/shell.png"
+import Shell from "./../assets/images/shell.png";
+import { getTwitchStreamStatus } from '@/app/lib/twitch';
 
 const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) => {
   function isWinActive(cur, id) {
@@ -74,6 +75,17 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
   const [imageData, setImageData] = useState([0, ""])
   const router = useRouter();
 
+  useEffect(() => {
+    setTimeout(async () => {
+      const { isLive, stream } = await getTwitchStreamStatus("TubboLIVE");
+      // console.log(isLive, stream)
+      // game_name, started_at, title, viewer_count
+      if (isLive) {
+        OpenWin(99)
+      }
+    }, 3000);
+  }, []);
+
   return (
     <motion.div
       onClick={(e) => {if (e.target.parentElement.id == "desktop") emptyClick()}}
@@ -81,6 +93,7 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
       id="desktop"
       className="hidden md:flex flex-col bg-transparent relative w-full min-h-full grow items-center "
     >
+      <audio id="ding" src="@/app/assets/sounds/ding.wav"></audio>
       <div className="left-1 top-2 absolute self-start grid grid-rows-[repeat(auto-fill,85px)] grid-cols-[repeat(auto-fill,85px)] grid-flow-col gap-1 w-full h-full">
         {linkList.map((item, index) => {
           return (

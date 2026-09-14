@@ -10,6 +10,7 @@ import ToolsGear from "./../assets/images/tools_gear-0.png";
 import dirIm from "./../assets/images/dir_md.png";
 import keys from "./../assets/images/keys.png"
 import Shutdown from '../assets/images/shutdown.png';
+import Clock from './Clock';
 
 
 Router
@@ -81,7 +82,7 @@ const StartMenu = ({startActive, setStartActive, WindowsList, Active, setActive}
           <Image alt="3" src={ToolsGear} height={20}/>
           <Image alt="balls" src={ToolsGear} height={20}/>
           <div className="ml-2 w-14 text-sm grow my-auto text-center">
-            {/* <Clock format={"HH:mm:ss"} style={{ fontSize: "1em" }} ticking={true} noSsr /> */}
+            <Clock />
           </div>
         </WinButton>
       </div>

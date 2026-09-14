@@ -45,6 +45,7 @@ export default function Home() {
     [4, "Арт-галерея", Art_sm, Art_sm, false, "-translate-x-[200px] translate-y-[100px]", "TODO!!! objects", "Мой сайт", "size-win-arts"],
     [5, "Достижения 2026", Star, Star, false, "-translate-x-[-200px] translate-y-[300px] w-150", null, null, ""],
     [20, "Просмотр изображений NikitaNik_OS", ImageView, ImageView, false, "translate-x-[0px] translate-y-[300px]", null, null, "size-win-image"],
+    [99, "Уведомление о стриме NikitaNik_of", Shell, Shell, false, "translate-x-[0px] translate-y-[400px] w-120 h-50 ", null, null, " "],
   ]);
   const [linkList, setLinkList] = useState([
     [0, "Обо мне", User, "win", 0],
