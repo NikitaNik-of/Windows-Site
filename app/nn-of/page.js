@@ -20,6 +20,8 @@ import Internet_sm from "./../assets/images/internet_sm.png"
 import Art_sm from "./../assets/images/paint_sm.png"
 import ImageView from "./../assets/images/image_view.png"
 import Star from "./../assets/images/star.png"
+import Media from "./../assets/images/media.png";
+import Tip from "./../assets/images/tip.png"
 
 // images links
 import Shell from "./../assets/images/shell.png"
@@ -45,7 +47,7 @@ export default function Home() {
     [4, "Арт-галерея", Art_sm, Art_sm, false, "-translate-x-[200px] translate-y-[100px]", "TODO!!! objects", "Мой сайт", "size-win-arts"],
     [5, "Достижения 2026", Star, Star, false, "-translate-x-[-200px] translate-y-[300px] w-150", null, null, ""],
     [20, "Просмотр изображений NikitaNik_OS", ImageView, ImageView, false, "translate-x-[0px] translate-y-[300px]", null, null, "size-win-image"],
-    [99, "Уведомление о стриме NikitaNik_of", Shell, Shell, false, "translate-x-[0px] translate-y-[400px] w-120 h-50 ", null, null, " "],
+    [99, "Уведомление о стриме NikitaNik_of", Media, Media, false, "translate-x-[0px] translate-y-[400px] w-140 h-60 ", null, null, " "],
   ]);
   const [linkList, setLinkList] = useState([
     [0, "Обо мне", User, "win", 0],
@@ -73,10 +75,10 @@ export default function Home() {
     >
       <title>NikitaNik_OS | User: nn_of</title>
       <Desktop WindowsList={WindowsList} setWindowsList={setWindowsList} linkList={linkList} Active={Active} setActive={setActive}/>
-      <StartMenu startActive={startActive} setStartActive={setStartActive} WindowsList={WindowsList} Active={Active} setActive={setActive}/>
+      <StartMenu startActive={startActive} setStartActive={setStartActive} WindowsList={WindowsList} setWindowsList={setWindowsList} Active={Active} setActive={setActive}/>
 
       <MobDesktop WindowsList={mobWindowsList} setWindowsList={setMobWindowsList} Active={Active} setActive={setActive}/>
-      <MobStartMenu startActive={startActive} setStartActive={setStartActive} WindowsList={mobWindowsList} Active={Active} setActive={setActive}/>
+      <MobStartMenu startActive={startActive} setStartActive={setStartActive} WindowsList={mobWindowsList} setWindowsList={setMobWindowsList} Active={Active} setActive={setActive}/>
 
     </main>
   );

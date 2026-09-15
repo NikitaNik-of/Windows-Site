@@ -1,11 +1,16 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import useSound from 'use-sound';
 import { useRouter } from "next/navigation";
-import Window from "./Window";
+
 import { motion } from "framer-motion";
+
+import Window from "./Window";
 import Link from "./Link";
 import WinButton from "./WinButton";
-import Shell from "./../assets/images/shell.png";
+
+import Shell from "./../assets/images/shell.png";;
+
 import { getTwitchStreamStatus } from '@/app/lib/twitch';
 
 const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) => {
@@ -72,12 +77,19 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
 
   const constraintsRef = useRef(null);
   const [FocusedIcon, setFocusedIcon] = useState(-1);
+
   const [liveStatus, setLiveStatus] = useState(false);
   const [streamData, setStreamData] = useState({});
+  
   const [imageData, setImageData] = useState([0, ""])
+  
   const router = useRouter();
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const audio = document.getElementById("dingSound");
+      setAudioElement(audio);
+    }
     setTimeout(async () => {
       const { isLive, stream } = await getTwitchStreamStatus("eslcs");
       setLiveStatus(isLive);
@@ -86,6 +98,7 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
       // game_name, started_at, title, viewer_count, user_name
       if (isLive) {
         OpenWin(99)
+        audioElement.play()
       }
     }, 3000);
   }, []);
@@ -97,7 +110,6 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
       id="desktop"
       className="hidden md:flex flex-col bg-transparent relative w-full min-h-full grow items-center "
     >
-      <audio id="ding" src="@/app/assets/sounds/ding.wav"></audio>
       <div className="left-1 top-2 absolute self-start grid grid-rows-[repeat(auto-fill,85px)] grid-cols-[repeat(auto-fill,85px)] grid-flow-col gap-1 w-full h-full">
         {linkList.map((item, index) => {
           return (

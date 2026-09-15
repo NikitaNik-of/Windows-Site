@@ -78,7 +78,7 @@ const Window = ({
             ) : winID == 5 ? (
               <WCGoals />
             ) : winID == 99 ? (
-              <WCLiveNotif streamData={streamData} /> 
+              <WCLiveNotif streamData={streamData} closeWin={closeWin} /> 
             ) : winID == 10 ? (
               <DCAbout />
             ) : winID == 11 ? (
