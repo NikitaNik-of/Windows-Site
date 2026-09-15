@@ -1,8 +1,55 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import WinButton from '../WinButton'
 
-const WCLiveNotif = () => {
+const WCLiveNotif = ({streamData}) => {
+
+  function parseTime(startData) {
+    var startTime = new Date(startData).getTime()
+    var nowTime = Date.now()
+
+    var diffMs = nowTime - startTime
+    if (isNaN(diffMs) || diffMs < 0) {
+      return '00:00'
+    }
+
+    var totalSeconds = Math.floor(diffMs / 1000)
+    var hours = Math.floor(totalSeconds / 3600)
+    var minutes = Math.floor((totalSeconds % 3600) / 60)
+    var seconds = totalSeconds % 60
+
+  return convertToTwoDigit(hours) + ' ч. ' + convertToTwoDigit(minutes) + ' мин.'
+  }
+
+  const convertToTwoDigit = (number) => {
+    return number.toLocaleString('en-US', {
+      minimumIntegerDigits: 2
+    })
+  }
+
   return (
-    <div>WCLiveNotif</div>
+    <div className='w-full h-full p-1 justify-between flex flex-col'>
+      <div>
+        <div className='font-bold text-lg'>
+          {streamData.user_name}
+        </div>
+        <div>
+          {streamData.title}
+        </div>
+        <div>
+          {streamData.game_name}
+        </div>
+        <div className='text-red-700'>
+          {streamData.viewer_count} зрителей
+        </div>
+        <div className='italic text-xs'>
+          {parseTime(streamData.started_at)}
+        </div>
+      </div>
+      <div className="flex gap-2 justify-center">
+        <WinButton onClick={() => {window.open("https://www.twitch.tv/nikitanik_of", "_blank")}}>Смотреть</WinButton>
+        <WinButton>ОК</WinButton>
+      </div>
+    </div>
   )
 }
 

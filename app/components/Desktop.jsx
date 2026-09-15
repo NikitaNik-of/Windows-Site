@@ -72,14 +72,18 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
 
   const constraintsRef = useRef(null);
   const [FocusedIcon, setFocusedIcon] = useState(-1);
+  const [liveStatus, setLiveStatus] = useState(false);
+  const [streamData, setStreamData] = useState({});
   const [imageData, setImageData] = useState([0, ""])
   const router = useRouter();
 
   useEffect(() => {
     setTimeout(async () => {
-      const { isLive, stream } = await getTwitchStreamStatus("TubboLIVE");
-      // console.log(isLive, stream)
-      // game_name, started_at, title, viewer_count
+      const { isLive, stream } = await getTwitchStreamStatus("eslcs");
+      setLiveStatus(isLive);
+      setStreamData(stream);
+      // console.log(stream)
+      // game_name, started_at, title, viewer_count, user_name
       if (isLive) {
         OpenWin(99)
       }
@@ -135,6 +139,7 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
             footer2={wind[7]}
             size={wind[8]}
             imgViewer={imageData}
+            streamData={streamData}
           >
             <WinButton onClick={() => {CloseWin(wind[0])}}>Hello</WinButton>
             <WinButton>OK</WinButton>

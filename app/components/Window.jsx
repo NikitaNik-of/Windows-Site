@@ -28,6 +28,7 @@ const Window = ({
   navButtons = [1, 0, 2],
   openImageWindows,
   imgViewer,
+  streamData,
   drag = true,
   ...props
 }) => {
@@ -77,7 +78,7 @@ const Window = ({
             ) : winID == 5 ? (
               <WCGoals />
             ) : winID == 99 ? (
-              <WCLiveNotif /> 
+              <WCLiveNotif streamData={streamData} /> 
             ) : winID == 10 ? (
               <DCAbout />
             ) : winID == 11 ? (
