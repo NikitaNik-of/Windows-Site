@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IoMdArrowDropright } from "react-icons/io";
 import Image from "next/image";
 import { Router } from "next/router";
@@ -11,11 +11,21 @@ import dirIm from "./../assets/images/dir_md.png";
 import keys from "./../assets/images/keys.png";
 import Shutdown from "../assets/images/shutdown.png";
 import Clock from "./Clock";
+import PopUpNotification from "./PopUpNotification";
 
 Router;
 
 const StartMenu = ({ startActive, setStartActive, WindowsList, setWindowsList, Active, setActive }) => {
   
+  const [notificationWindowIndex, setNotificationWindowIndex] = useState(-1);
+
+  useEffect(() => {
+    var copyList = [...WindowsList];
+    var indexFound = copyList.findIndex((item) => item[0] == 99);
+    setNotificationWindowIndex(indexFound);
+    console.log(indexFound);
+  }, []);
+
   function OpenWin(id) {
     var copyList = [...WindowsList];
     var indexFound = copyList.findIndex((item) => item[0] == id);
@@ -86,9 +96,12 @@ const StartMenu = ({ startActive, setStartActive, WindowsList, setWindowsList, A
         ))}
       </div>
 
-      <WinButton state="in" className="w-auto space-x-0.5">
-        <Image onClick={() => {OpenWin(99)}} alt="" className="" title="Статус стрима" src={Media} height={20} />
-        <div className="ml-2 w-14 text-sm grow my-auto text-center">
+      <WinButton state="in" className="w-auto space-x-1.5">
+        <div className={`relative ${""}`}>
+          <Image onClick={() => {OpenWin(99);}} alt="" className="" title="Статус стрима" src={Media} height={20}/>
+          <PopUpNotification className={`hidden`}  />
+        </div>
+        <div className="mr-1 text-sm grow my-auto text-center">
           <Clock />
         </div>
       </WinButton>

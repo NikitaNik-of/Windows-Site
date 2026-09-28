@@ -3,6 +3,8 @@ import WinButton from "../WinButton";
 import NetShow from "@/app/assets/images/netshow.png";
 import Image from "next/image";
 
+import logoTw from '../../assets/logos/twitch.png'
+
 const WCLiveNotif = ({ streamData, closeWin }) => {
   function parseTime(startData) {
     var startTime = new Date(startData).getTime();
@@ -29,22 +31,22 @@ const WCLiveNotif = ({ streamData, closeWin }) => {
 
   return (
     <div className="w-full h-full p-2 justify-between flex flex-col">
-      <div className="flex flex-col gap-1">
-        <div className="flex gap-2 items-center shadow-w98-pressed py-2 bg-white/70">
+      <div className="mt-2">
+        <div className="flex gap-1 items-center shadow-w98-pressed py-2 bg-white/70">
           <Image alt="" className="mx-2 shadow-w98-def w-15 p-2 bg-[#c2c2c2]" src={NetShow} />
           <div>
-            <div className="font-bold text-lg">/{streamData.user_name || "/NikitaNik_of"}</div>
-            <div>{streamData.title || "Топ-название стрима"}</div>
-            <div className="italic">Игра: {streamData.game_name || "Топовая игра"}</div>
+            <div className="font-bold text-lg">{streamData ? streamData.user_name : "/NikitaNik_of"}</div>
+            <div>{streamData ? streamData.title : "Топ-название стрима"}</div>
+            <div className="italic">Игра: {streamData ? streamData.game_name : "Топовая игра"}</div>
           </div>
         </div>
         {streamData ? (
-          <div className="flex items-baseline px-1 mb-4 justify-between">
+          <div className="flex items-baseline px-1 mt-1 mb-4 justify-between">
             <div className="italic text-xs">Стрим онлайн: {parseTime(streamData.started_at)}</div>
             <div className="text-red-700">{streamData.viewer_count} зрителей</div>
           </div>
         ) : (
-          <div>Стрим оффлайн</div>
+          <div className="px-1 mt-2 mb-4 text-center italic">Стрим оффлайн</div>
         )}
       </div>
       <div className="flex gap-2 justify-center">
@@ -53,7 +55,10 @@ const WCLiveNotif = ({ streamData, closeWin }) => {
             window.open("https://www.twitch.tv/nikitanik_of", "_blank");
           }}
         >
-          Смотреть
+          <div className='flex items-center -mx-2 space-x-1'>
+            <Image className='w-5 h-5 p-0.5' src={logoTw} alt="" />
+            <div className='text-center my-auto'>{streamData ? "Смотреть" : "Открыть канал"}</div>
+          </div>
         </WinButton>
         <WinButton
           onClick={() => {

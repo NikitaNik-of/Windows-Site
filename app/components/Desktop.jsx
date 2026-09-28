@@ -33,7 +33,8 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
     var copyList = [...WindowsList]
     var indexFound = copyList.findIndex(element => element[0] == id)
     copyList[indexFound][4] = false
-    setWindowsList(copyList)    
+    setWindowsList(copyList)
+    emptyClick()
   }
 
   function openImageWindows(imgIndex = 0, imgCollection = "", imageName = "", path = "") {
@@ -80,6 +81,7 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
 
   const [liveStatus, setLiveStatus] = useState(false);
   const [streamData, setStreamData] = useState({});
+  const dingAudioRef = useRef();
   
   const [imageData, setImageData] = useState([0, ""])
   
@@ -88,17 +90,16 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const audio = document.getElementById("dingSound");
-      setAudioElement(audio);
     }
     setTimeout(async () => {
-      const { isLive, stream } = await getTwitchStreamStatus("eslcs");
+      const { isLive, stream } = await getTwitchStreamStatus("NikitaNik_of");
       setLiveStatus(isLive);
       setStreamData(stream);
       // console.log(stream)
       // game_name, started_at, title, viewer_count, user_name
       if (isLive) {
         OpenWin(99)
-        audioElement.play()
+        dingAudioRef.current.play()
       }
     }, 3000);
   }, []);
@@ -110,6 +111,7 @@ const Desktop = ({ WindowsList, setWindowsList, linkList, Active, setActive }) =
       id="desktop"
       className="hidden md:flex flex-col bg-transparent relative w-full min-h-full grow items-center "
     >
+      <audio src="/sounds/ding.wav" ref={dingAudioRef} id="dingSound" />
       <div className="left-1 top-2 absolute self-start grid grid-rows-[repeat(auto-fill,85px)] grid-cols-[repeat(auto-fill,85px)] grid-flow-col gap-1 w-full h-full">
         {linkList.map((item, index) => {
           return (

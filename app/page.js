@@ -44,9 +44,7 @@ const Login = () => {
     <div className="bg-[#088] h-screen w-full">
       <title>NikitaNik_OS | Login Screen</title>
       <motion.div
-        onClickCapture={() => {
-          emptyClick();
-        }}
+        onClick={(e) => {if (e.target.parentElement.id == "desktop") emptyClick()}}
         ref={constraintsRef}
         id="login"
         className="bg-transparent w-full min-h-full items-center hidden md:flex justify-center"
